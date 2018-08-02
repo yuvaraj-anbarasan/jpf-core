@@ -1,8 +1,4 @@
-local.properties
-.version
-build.properties
-
-####### General #######
+## General
 *.swo
 trace
 activity*.png
@@ -10,23 +6,25 @@ activity*.png
 *.orig
 *~
 *.DS_Store
+local.properties
+.version
+build.properties
 
-####### Ant #######
+## Ant
 build/
 
-####### Gradle #######
+## Gradle
 .gradle/
 reports/
 
-####### Covers NetBeans IDE #######
+## Covers NetBeans IDE
 nbproject/private/
 nbbuild/
 dist/
 nbdist/
 .nb-gradle/
 
-####### Covers Eclipse IDE #######
-.idea/
+## Covers Eclipse IDE
 .metadata
 tmp/
 *.tmp
@@ -39,9 +37,12 @@ tmp/
 .classpath
 .project
 
-####### Covers JetBrains IDE: IntelliJ #######
+## Covers JetBrains IDE: IntelliJ
 *.iml
 *.ipr
+*.iws
+out/
+.idea/
 
 # User-specific stuff:
 .idea/**/workspace.xml
@@ -61,13 +62,7 @@ tmp/
 .idea/**/gradle.xml
 .idea/**/libraries
 
-## File-based project format:
-*.iws
-
 ## Plugin-specific files:
-
-# IntelliJ
-out/
 
 # JIRA plugin
 atlassian-ide-plugin.xml
