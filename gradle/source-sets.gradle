@@ -38,3 +38,9 @@ compileClassesJava {
         ]
     }
 }
+
+compilePeersJava {
+    doFirst {
+        options.compilerArgs = ["--add-exports", "java.base/jdk.internal.misc=ALL-UNNAMED"]
+    }
+}
