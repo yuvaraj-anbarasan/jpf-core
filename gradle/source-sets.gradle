@@ -14,7 +14,7 @@ sourceSets {
         compileClasspath += sourceSets.main.output
     }
     classes {
-        java.srcDirs = ["src/classes"]
+        java.srcDirs = ["src/classes/gov", "src/classes/org"]
         java.outputDir = file("${buildDir}/classes")
         compileClasspath += sourceSets.main.output + sourceSets.annotations.output
     }
@@ -28,5 +28,13 @@ sourceSets {
         java.outputDir = file("${buildDir}/tests")
         compileClasspath += sourceSets.annotations.output + sourceSets.classes.output + sourceSets.peers.output
         runtimeClasspath += compileClasspath
+    }
+}
+
+compileClassesJava {
+    doFirst {
+        options.compilerArgs = [
+            "--add-exports", "java.base/sun.net.www.protocol.http=ALL-UNNAMED",
+        ]
     }
 }
