@@ -120,17 +120,31 @@ public class JVMClassInfo extends ClassInfo {
                                      String parameters, String descriptor, int[] cpArgs) {
       String clsName = null;
       ClassInfo enclosingLambdaCls;
-      
+      System.err.println("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>> JVMClassInfo setBootstrapMethod <<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+      System.err.println("cf: "+cf);
+      System.err.println("tag: "+tag);
+      System.err.println("idx: "+idx);
+      System.err.println("refkind: "+refKind);
+      System.err.println("cls: "+mth);
+      System.err.println("parameters: "+parameters);
+      System.err.println("descriptor: "+descriptor);
+
       if (cpArgs.length > 1) {
         // For Lambdas
       	int mrefIdx = cf.mhMethodRefIndexAt(cpArgs[1]);
         clsName = cf.methodClassNameAt(mrefIdx).replace('/', '.');
 
+        System.err.println("clsName: "+clsName);
+        System.err.println("JVMClassInfo.this.getName(): "+JVMClassInfo.this.getName());
+
         if(!clsName.equals(JVMClassInfo.this.getName())) {
+          System.err.println("*************************************************************************************************************");
           enclosingLambdaCls = ClassLoaderInfo.getCurrentResolvedClassInfo(clsName);
         } else {
           enclosingLambdaCls = JVMClassInfo.this;
         }
+
+        System.err.println("enclosingLambda: "+enclosingLambdaCls);
 
         assert (enclosingLambdaCls!=null);
 
@@ -139,14 +153,18 @@ public class JVMClassInfo extends ClassInfo {
         String signature = cf.methodDescriptorAt(mrefIdx);
         String samDescriptor = cf.methodTypeDescriptorAt(cpArgs[2]); 
         
-        setBootstrapMethodInfo(enclosingLambdaCls, mthName, signature, idx, lambdaRefKind, samDescriptor, null,
+        setBootstrapMethodInfo(enclosingLambdaCls, clsName, mthName, signature, idx, lambdaRefKind, samDescriptor, null,
                               BootstrapMethodInfo.BMType.LAMBDA_EXPRESSION);
       }
       else {
         // For String Concatenation
         clsName = cls; 
-          
+
+        System.err.println("clsName: "+clsName);
+        System.err.println("JVMClassInfo.this.getName(): "+JVMClassInfo.this.getName());
+
         if(!clsName.equals(JVMClassInfo.this.getName())) {
+          System.err.println("*************************************************************************************************************");
         enclosingLambdaCls = ClassLoaderInfo.getCurrentResolvedClassInfo(clsName);
         } else {
           enclosingLambdaCls = JVMClassInfo.this;
@@ -156,17 +174,26 @@ public class JVMClassInfo extends ClassInfo {
 
         String bmArg = cf.getBmArgString(cpArgs[0]);
 
-        setBootstrapMethodInfo(enclosingLambdaCls, mth, parameters, idx, refKind, descriptor, bmArg,
+        setBootstrapMethodInfo(enclosingLambdaCls, clsName, mth, parameters, idx, refKind, descriptor, bmArg,
                 BootstrapMethodInfo.BMType.STRING_CONCATENATION);
       }
 
     }
     
     // helper method for setBootstrapMethod()
-    public void setBootstrapMethodInfo(ClassInfo enclosingCls, String mthName, String parameters, int idx, int refKind, 
+    public void setBootstrapMethodInfo(ClassInfo enclosingCls, String clsName, String mthName, String parameters, int idx, int refKind, 
                               String descriptor, String bmArg,BootstrapMethodInfo.BMType bmType){
       MethodInfo methodBody = enclosingCls.getMethod(mthName + parameters, false);
       
+      System.err.println("\n>>>>>>>>>>>>> setBootstrapMethodInfo ");
+      System.err.println( "mthName: "+mthName);
+      System.err.println( "parameters: "+parameters);
+      System.err.println( "methodBody: "+methodBody);
+      System.err.println("<<<<<<<<<<<<<");
+
+      if ( clsName.equals("java.lang.Module") )
+        System.exit(0);
+
       if(methodBody!=null) {
         bootstrapMethods[idx] = new BootstrapMethodInfo(refKind, JVMClassInfo.this, methodBody, descriptor
                 , bmArg, bmType);

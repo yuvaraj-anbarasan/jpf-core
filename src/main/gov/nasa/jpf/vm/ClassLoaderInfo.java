@@ -351,7 +351,7 @@ public class ClassLoaderInfo
           } else {
             try {
               log.info("loading class ", typeName, " from ",  url);
-              ci = match.createClassInfo(this);
+              ci = match.createClassInfo(this);   // recursion starts
               
             } catch (ClassParseException cpx){
               throw new ClassInfoException( "error parsing class", this, "java.lang.NoClassDefFoundError", typeName, cpx);

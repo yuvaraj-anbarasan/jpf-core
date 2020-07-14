@@ -1,0 +1,2499 @@
+Classfile /home/yuvaraj/yuvaraj/projects/jpf-core/URLClassLoaderTest.class
+  Last modified 13-Jul-2020; size 12728 bytes
+  MD5 checksum 0d31678587286024d0e2ab8dcf659715
+  Compiled from "URLClassLoaderTest.java"
+public class gov.nasa.jpf.test.java.net.URLClassLoaderTest extends gov.nasa.jpf.test.java.net.LoadUtility
+  minor version: 0
+  major version: 55
+  flags: (0x0021) ACC_PUBLIC, ACC_SUPER
+  this_class: #99                         // gov/nasa/jpf/test/java/net/URLClassLoaderTest
+  super_class: #100                       // gov/nasa/jpf/test/java/net/LoadUtility
+  interfaces: 0, fields: 0, methods: 22, attributes: 4
+Constant pool:
+    #1 = Methodref          #100.#211     // gov/nasa/jpf/test/java/net/LoadUtility."<init>":()V
+    #2 = String             #212          // \\
+    #3 = String             #213          // /
+    #4 = Methodref          #6.#214       // java/lang/String.replace:(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+    #5 = String             #215          // java.lang.NullPointerException
+    #6 = Class              #216          // java/lang/String
+    #7 = Methodref          #99.#217      // gov/nasa/jpf/test/java/net/URLClassLoaderTest.verifyUnhandledException:(Ljava/lang/String;[Ljava/lang/String;)Z
+    #8 = Class              #218          // java/net/URLClassLoader
+    #9 = Methodref          #8.#219       // java/net/URLClassLoader."<init>":([Ljava/net/URL;)V
+   #10 = Methodref          #99.#220      // gov/nasa/jpf/test/java/net/URLClassLoaderTest.verifyNoPropertyViolation:([Ljava/lang/String;)Z
+   #11 = Class              #221          // java/net/URL
+   #12 = Methodref          #8.#222       // java/net/URLClassLoader.getParent:()Ljava/lang/ClassLoader;
+   #13 = Methodref          #99.#223      // gov/nasa/jpf/test/java/net/URLClassLoaderTest.assertNotNull:(Ljava/lang/Object;)V
+   #14 = Methodref          #224.#225     // java/lang/ClassLoader.getSystemClassLoader:()Ljava/lang/ClassLoader;
+   #15 = Methodref          #99.#226      // gov/nasa/jpf/test/java/net/URLClassLoaderTest.assertEquals:(Ljava/lang/Object;Ljava/lang/Object;)V
+   #16 = Class              #227          // gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader
+   #17 = Methodref          #16.#228      // gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader."<init>":(Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;[Ljava/net/URL;)V
+   #18 = Methodref          #8.#229       // java/net/URLClassLoader."<init>":([Ljava/net/URL;Ljava/lang/ClassLoader;)V
+   #19 = Methodref          #224.#222     // java/lang/ClassLoader.getParent:()Ljava/lang/ClassLoader;
+   #20 = String             #230          // java.lang.NoClassDefFoundError
+   #21 = String             #231          // java/lang/Class
+   #22 = Methodref          #8.#232       // java/net/URLClassLoader.loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+   #23 = String             #233          // java.lang.ClassNotFoundException
+   #24 = String             #234          // java.lang.Does_Not_Exist
+   #25 = String             #235          // java.lang.Class.class
+   #26 = String             #236          // java.lang.Class
+   #27 = Methodref          #224.#232     // java/lang/ClassLoader.loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+   #28 = Methodref          #99.#237      // gov/nasa/jpf/test/java/net/URLClassLoaderTest.assertSame:(Ljava/lang/Object;Ljava/lang/Object;)V
+   #29 = Methodref          #88.#238      // java/lang/Class.getClassLoader:()Ljava/lang/ClassLoader;
+   #30 = Methodref          #16.#239      // gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader."<init>":(Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;[Ljava/net/URL;Ljava/lang/ClassLoader;)V
+   #31 = Methodref          #16.#232      // gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader.loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+   #32 = Methodref          #88.#240      // java/lang/Class.getName:()Ljava/lang/String;
+   #33 = Methodref          #16.#241      // gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader.getLoadedClass:(Ljava/lang/String;)Ljava/lang/Class;
+   #34 = Methodref          #99.#242      // gov/nasa/jpf/test/java/net/URLClassLoaderTest.assertNull:(Ljava/lang/Object;)V
+   #35 = Methodref          #99.#243      // gov/nasa/jpf/test/java/net/URLClassLoaderTest.movePkgOut:()V
+   #36 = Fieldref           #99.#244      // gov/nasa/jpf/test/java/net/URLClassLoaderTest.dirUrl:Ljava/lang/String;
+   #37 = Methodref          #11.#245      // java/net/URL."<init>":(Ljava/lang/String;)V
+   #38 = Fieldref           #99.#246      // gov/nasa/jpf/test/java/net/URLClassLoaderTest.pkg:Ljava/lang/String;
+   #39 = InvokeDynamic      #0:#250       // #0:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+   #40 = Methodref          #99.#251      // gov/nasa/jpf/test/java/net/URLClassLoaderTest.assertFalse:(Z)V
+   #41 = Methodref          #88.#252      // java/lang/Class.getInterfaces:()[Ljava/lang/Class;
+   #42 = Methodref          #99.#253      // gov/nasa/jpf/test/java/net/URLClassLoaderTest.assertEquals:(II)V
+   #43 = Fieldref           #99.#254      // gov/nasa/jpf/test/java/net/URLClassLoaderTest.jarUrl:Ljava/lang/String;
+   #44 = Methodref          #99.#255      // gov/nasa/jpf/test/java/net/URLClassLoaderTest.movePkgBack:()V
+   #45 = InvokeDynamic      #1:#250       // #1:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+   #46 = Methodref          #8.#257       // java/net/URLClassLoader.findResource:(Ljava/lang/String;)Ljava/net/URL;
+   #47 = InvokeDynamic      #2:#259       // #2:makeConcatWithConstants:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+   #48 = Methodref          #99.#260      // gov/nasa/jpf/test/java/net/URLClassLoaderTest.checkUrl:(Ljava/lang/String;)Ljava/lang/String;
+   #49 = Methodref          #11.#261      // java/net/URL.toString:()Ljava/lang/String;
+   #50 = InvokeDynamic      #3:#250       // #3:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+   #51 = String             #263          // non_existence_resource
+   #52 = String             #264          // java/lang/Class.class
+   #53 = InvokeDynamic      #4:#259       // #4:makeConcatWithConstants:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+   #54 = Methodref          #8.#266       // java/net/URLClassLoader.findResources:(Ljava/lang/String;)Ljava/util/Enumeration;
+   #55 = Class              #267          // java/util/ArrayList
+   #56 = Methodref          #55.#211      // java/util/ArrayList."<init>":()V
+   #57 = InterfaceMethodref #165.#268     // java/util/Enumeration.hasMoreElements:()Z
+   #58 = InterfaceMethodref #165.#269     // java/util/Enumeration.nextElement:()Ljava/lang/Object;
+   #59 = InterfaceMethodref #166.#270     // java/util/List.add:(Ljava/lang/Object;)Z
+   #60 = InterfaceMethodref #166.#271     // java/util/List.contains:(Ljava/lang/Object;)Z
+   #61 = Methodref          #99.#272      // gov/nasa/jpf/test/java/net/URLClassLoaderTest.assertTrue:(Z)V
+   #62 = InterfaceMethodref #166.#273     // java/util/List.size:()I
+   #63 = String             #274          // file:///x/y/z/
+   #64 = String             #275          // file:///a/b/c/
+   #65 = Methodref          #8.#276       // java/net/URLClassLoader.getURLs:()[Ljava/net/URL;
+   #66 = Methodref          #8.#277       // java/net/URLClassLoader.newInstance:([Ljava/net/URL;)Ljava/net/URLClassLoader;
+   #67 = Methodref          #8.#278       // java/net/URLClassLoader.getResource:(Ljava/lang/String;)Ljava/net/URL;
+   #68 = Methodref          #8.#279       // java/net/URLClassLoader.newInstance:([Ljava/net/URL;Ljava/lang/ClassLoader;)Ljava/net/URLClassLoader;
+   #69 = Methodref          #224.#278     // java/lang/ClassLoader.getResource:(Ljava/lang/String;)Ljava/net/URL;
+   #70 = String             #280          // java.lang.Object
+   #71 = Class              #281          // gov/nasa/jpf/test/java/net/URLClassLoaderTest$Standard
+   #72 = Methodref          #71.#228      // gov/nasa/jpf/test/java/net/URLClassLoaderTest$Standard."<init>":(Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;[Ljava/net/URL;)V
+   #73 = Methodref          #71.#239      // gov/nasa/jpf/test/java/net/URLClassLoaderTest$Standard."<init>":(Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;[Ljava/net/URL;Ljava/lang/ClassLoader;)V
+   #74 = Methodref          #71.#232      // gov/nasa/jpf/test/java/net/URLClassLoaderTest$Standard.loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+   #75 = Class              #282          // gov/nasa/jpf/test/java/net/URLClassLoaderTest$Custom
+   #76 = Methodref          #75.#239      // gov/nasa/jpf/test/java/net/URLClassLoaderTest$Custom."<init>":(Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;[Ljava/net/URL;Ljava/lang/ClassLoader;)V
+   #77 = Methodref          #75.#232      // gov/nasa/jpf/test/java/net/URLClassLoaderTest$Custom.loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+   #78 = Methodref          #16.#283      // gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader.delegateTofindSystemClass:(Ljava/lang/String;)Ljava/lang/Class;
+   #79 = Class              #284          // java/lang/ClassNotFoundException
+   #80 = Methodref          #16.#285      // gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader.getPackages:()[Ljava/lang/Package;
+   #81 = Methodref          #286.#240     // java/lang/Package.getName:()Ljava/lang/String;
+   #82 = String             #287          // java.lang
+   #83 = Methodref          #6.#288       // java/lang/String.equals:(Ljava/lang/Object;)Z
+   #84 = String             #193          // classloader_specific_tests
+   #85 = Methodref          #16.#289      // gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader.getDefinedPackage:(Ljava/lang/String;)Ljava/lang/Package;
+   #86 = String             #290          // non_existing_package
+   #87 = String             #291          // causeArithmeticException
+   #88 = Class              #231          // java/lang/Class
+   #89 = Methodref          #88.#292      // java/lang/Class.getMethod:(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+   #90 = Class              #293          // java/lang/Object
+   #91 = Methodref          #203.#294     // java/lang/reflect/Method.invoke:(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+   #92 = String             #295          // Should have thrown java.lang.ArithmeticException: division by zero
+   #93 = Methodref          #99.#296      // gov/nasa/jpf/test/java/net/URLClassLoaderTest.fail:(Ljava/lang/String;)V
+   #94 = Class              #297          // java/lang/reflect/InvocationTargetException
+   #95 = Methodref          #94.#298      // java/lang/reflect/InvocationTargetException.getCause:()Ljava/lang/Throwable;
+   #96 = Class              #299          // java/lang/ArithmeticException
+   #97 = Methodref          #204.#300     // java/lang/Throwable.getMessage:()Ljava/lang/String;
+   #98 = String             #301          // division by zero
+   #99 = Class              #302          // gov/nasa/jpf/test/java/net/URLClassLoaderTest
+  #100 = Class              #303          // gov/nasa/jpf/test/java/net/LoadUtility
+  #101 = Utf8               Custom
+  #102 = Utf8               InnerClasses
+  #103 = Utf8               Standard
+  #104 = Utf8               TestClassLoader
+  #105 = Utf8               <init>
+  #106 = Utf8               ()V
+  #107 = Utf8               Code
+  #108 = Utf8               LineNumberTable
+  #109 = Utf8               LocalVariableTable
+  #110 = Utf8               this
+  #111 = Utf8               Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;
+  #112 = Utf8               checkUrl
+  #113 = Utf8               (Ljava/lang/String;)Ljava/lang/String;
+  #114 = Utf8               url
+  #115 = Utf8               Ljava/lang/String;
+  #116 = Utf8               testConstructor_NullPointerException
+  #117 = Utf8               StackMapTable
+  #118 = Utf8               RuntimeVisibleAnnotations
+  #119 = Utf8               Lorg/junit/Test;
+  #120 = Utf8               testConstructorEmptyURLs
+  #121 = Utf8               cl
+  #122 = Utf8               Ljava/net/URLClassLoader;
+  #123 = Utf8               testConstructorParent
+  #124 = Utf8               urls
+  #125 = Utf8               [Ljava/net/URL;
+  #126 = Utf8               parent
+  #127 = Utf8               Ljava/lang/ClassLoader;
+  #128 = Utf8               testLoadClass_NoClassDefFoundError
+  #129 = Utf8               Exceptions
+  #130 = Utf8               testLoadClass_ClassNotFoundException
+  #131 = Utf8               testLoadClass_ClassNotFoundException2
+  #132 = Utf8               testSystemLoaderLoadClass
+  #133 = Utf8               systemCl
+  #134 = Utf8               cname
+  #135 = Utf8               c1
+  #136 = Utf8               Ljava/lang/Class;
+  #137 = Utf8               c2
+  #138 = Utf8               c3
+  #139 = Utf8               LocalVariableTypeTable
+  #140 = Utf8               Ljava/lang/Class<*>;
+  #141 = Utf8               testFindLoadedClass
+  #142 = Utf8               ucl1
+  #143 = Utf8               Lgov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader;
+  #144 = Utf8               ucl2
+  #145 = Utf8               c
+  #146 = Class              #304          // java/net/MalformedURLException
+  #147 = Utf8               testNonSystemLoaderLoadClass
+  #148 = Utf8               ifc
+  #149 = Utf8               cls
+  #150 = Class              #125          // "[Ljava/net/URL;"
+  #151 = Class              #305          // "[Ljava/lang/Class;"
+  #152 = Utf8               testFindResource
+  #153 = Utf8               resClass1
+  #154 = Utf8               Ljava/net/URL;
+  #155 = Utf8               expectedUrl
+  #156 = Utf8               resInterface1
+  #157 = Utf8               testFindResources
+  #158 = Utf8               resource
+  #159 = Utf8               e
+  #160 = Utf8               Ljava/util/Enumeration;
+  #161 = Utf8               urlList
+  #162 = Utf8               Ljava/util/List;
+  #163 = Utf8               Ljava/util/Enumeration<Ljava/net/URL;>;
+  #164 = Utf8               Ljava/util/List<Ljava/lang/String;>;
+  #165 = Class              #306          // java/util/Enumeration
+  #166 = Class              #307          // java/util/List
+  #167 = Class              #308          // java/io/IOException
+  #168 = Utf8               testGetURLs
+  #169 = Utf8               i
+  #170 = Utf8               I
+  #171 = Utf8               clUrls
+  #172 = Utf8               testNewInstance1
+  #173 = Utf8               testNewInstance2
+  #174 = Utf8               resName
+  #175 = Utf8               testClassResolution
+  #176 = Utf8               objClass
+  #177 = Utf8               cl1
+  #178 = Utf8               Lgov/nasa/jpf/test/java/net/URLClassLoaderTest$Standard;
+  #179 = Utf8               cl2
+  #180 = Utf8               cl3
+  #181 = Utf8               cl4
+  #182 = Utf8               Lgov/nasa/jpf/test/java/net/URLClassLoaderTest$Custom;
+  #183 = Utf8               cl5
+  #184 = Utf8               c4
+  #185 = Utf8               testFindSystemClass
+  #186 = Utf8               loader
+  #187 = Utf8               testFindSystemClass_ClassNotFoundException
+  #188 = Utf8               testGetPackages
+  #189 = Utf8               pkgs
+  #190 = Utf8               [Ljava/lang/Package;
+  #191 = Utf8               java_lang
+  #192 = Utf8               Z
+  #193 = Utf8               classloader_specific_tests
+  #194 = Class              #190          // "[Ljava/lang/Package;"
+  #195 = Utf8               testGetDefinedPackage
+  #196 = Utf8               testThrownException
+  #197 = Utf8               cause
+  #198 = Utf8               Ljava/lang/Throwable;
+  #199 = Utf8               ite
+  #200 = Utf8               Ljava/lang/reflect/InvocationTargetException;
+  #201 = Utf8               m
+  #202 = Utf8               Ljava/lang/reflect/Method;
+  #203 = Class              #309          // java/lang/reflect/Method
+  #204 = Class              #310          // java/lang/Throwable
+  #205 = Class              #311          // java/lang/SecurityException
+  #206 = Class              #312          // java/lang/NoSuchMethodException
+  #207 = Class              #313          // java/lang/IllegalAccessException
+  #208 = Utf8               SourceFile
+  #209 = Utf8               URLClassLoaderTest.java
+  #210 = Utf8               NestMembers
+  #211 = NameAndType        #105:#106     // "<init>":()V
+  #212 = Utf8               \\
+  #213 = Utf8               /
+  #214 = NameAndType        #314:#315     // replace:(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+  #215 = Utf8               java.lang.NullPointerException
+  #216 = Utf8               java/lang/String
+  #217 = NameAndType        #316:#317     // verifyUnhandledException:(Ljava/lang/String;[Ljava/lang/String;)Z
+  #218 = Utf8               java/net/URLClassLoader
+  #219 = NameAndType        #105:#318     // "<init>":([Ljava/net/URL;)V
+  #220 = NameAndType        #319:#320     // verifyNoPropertyViolation:([Ljava/lang/String;)Z
+  #221 = Utf8               java/net/URL
+  #222 = NameAndType        #321:#322     // getParent:()Ljava/lang/ClassLoader;
+  #223 = NameAndType        #323:#324     // assertNotNull:(Ljava/lang/Object;)V
+  #224 = Class              #325          // java/lang/ClassLoader
+  #225 = NameAndType        #326:#322     // getSystemClassLoader:()Ljava/lang/ClassLoader;
+  #226 = NameAndType        #327:#328     // assertEquals:(Ljava/lang/Object;Ljava/lang/Object;)V
+  #227 = Utf8               gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader
+  #228 = NameAndType        #105:#329     // "<init>":(Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;[Ljava/net/URL;)V
+  #229 = NameAndType        #105:#330     // "<init>":([Ljava/net/URL;Ljava/lang/ClassLoader;)V
+  #230 = Utf8               java.lang.NoClassDefFoundError
+  #231 = Utf8               java/lang/Class
+  #232 = NameAndType        #331:#332     // loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+  #233 = Utf8               java.lang.ClassNotFoundException
+  #234 = Utf8               java.lang.Does_Not_Exist
+  #235 = Utf8               java.lang.Class.class
+  #236 = Utf8               java.lang.Class
+  #237 = NameAndType        #333:#328     // assertSame:(Ljava/lang/Object;Ljava/lang/Object;)V
+  #238 = NameAndType        #334:#322     // getClassLoader:()Ljava/lang/ClassLoader;
+  #239 = NameAndType        #105:#335     // "<init>":(Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;[Ljava/net/URL;Ljava/lang/ClassLoader;)V
+  #240 = NameAndType        #336:#337     // getName:()Ljava/lang/String;
+  #241 = NameAndType        #338:#332     // getLoadedClass:(Ljava/lang/String;)Ljava/lang/Class;
+  #242 = NameAndType        #339:#324     // assertNull:(Ljava/lang/Object;)V
+  #243 = NameAndType        #340:#106     // movePkgOut:()V
+  #244 = NameAndType        #341:#115     // dirUrl:Ljava/lang/String;
+  #245 = NameAndType        #105:#342     // "<init>":(Ljava/lang/String;)V
+  #246 = NameAndType        #343:#115     // pkg:Ljava/lang/String;
+  #247 = Utf8               BootstrapMethods
+  #248 = MethodHandle       6:#344        // REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #249 = String             #345          // \u0001.Class1
+  #250 = NameAndType        #346:#113     // makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+  #251 = NameAndType        #347:#348     // assertFalse:(Z)V
+  #252 = NameAndType        #349:#350     // getInterfaces:()[Ljava/lang/Class;
+  #253 = NameAndType        #327:#351     // assertEquals:(II)V
+  #254 = NameAndType        #352:#115     // jarUrl:Ljava/lang/String;
+  #255 = NameAndType        #353:#106     // movePkgBack:()V
+  #256 = String             #354          // \u0001/Class1.class
+  #257 = NameAndType        #355:#356     // findResource:(Ljava/lang/String;)Ljava/net/URL;
+  #258 = String             #357          // \u0001/\u0001
+  #259 = NameAndType        #346:#358     // makeConcatWithConstants:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+  #260 = NameAndType        #112:#113     // checkUrl:(Ljava/lang/String;)Ljava/lang/String;
+  #261 = NameAndType        #359:#337     // toString:()Ljava/lang/String;
+  #262 = String             #360          // \u0001/Interface1.class
+  #263 = Utf8               non_existence_resource
+  #264 = Utf8               java/lang/Class.class
+  #265 = String             #361          // \u0001\u0001
+  #266 = NameAndType        #362:#363     // findResources:(Ljava/lang/String;)Ljava/util/Enumeration;
+  #267 = Utf8               java/util/ArrayList
+  #268 = NameAndType        #364:#365     // hasMoreElements:()Z
+  #269 = NameAndType        #366:#367     // nextElement:()Ljava/lang/Object;
+  #270 = NameAndType        #368:#369     // add:(Ljava/lang/Object;)Z
+  #271 = NameAndType        #370:#369     // contains:(Ljava/lang/Object;)Z
+  #272 = NameAndType        #371:#348     // assertTrue:(Z)V
+  #273 = NameAndType        #372:#373     // size:()I
+  #274 = Utf8               file:///x/y/z/
+  #275 = Utf8               file:///a/b/c/
+  #276 = NameAndType        #374:#375     // getURLs:()[Ljava/net/URL;
+  #277 = NameAndType        #376:#377     // newInstance:([Ljava/net/URL;)Ljava/net/URLClassLoader;
+  #278 = NameAndType        #378:#356     // getResource:(Ljava/lang/String;)Ljava/net/URL;
+  #279 = NameAndType        #376:#379     // newInstance:([Ljava/net/URL;Ljava/lang/ClassLoader;)Ljava/net/URLClassLoader;
+  #280 = Utf8               java.lang.Object
+  #281 = Utf8               gov/nasa/jpf/test/java/net/URLClassLoaderTest$Standard
+  #282 = Utf8               gov/nasa/jpf/test/java/net/URLClassLoaderTest$Custom
+  #283 = NameAndType        #380:#332     // delegateTofindSystemClass:(Ljava/lang/String;)Ljava/lang/Class;
+  #284 = Utf8               java/lang/ClassNotFoundException
+  #285 = NameAndType        #381:#382     // getPackages:()[Ljava/lang/Package;
+  #286 = Class              #383          // java/lang/Package
+  #287 = Utf8               java.lang
+  #288 = NameAndType        #384:#369     // equals:(Ljava/lang/Object;)Z
+  #289 = NameAndType        #385:#386     // getDefinedPackage:(Ljava/lang/String;)Ljava/lang/Package;
+  #290 = Utf8               non_existing_package
+  #291 = Utf8               causeArithmeticException
+  #292 = NameAndType        #387:#388     // getMethod:(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+  #293 = Utf8               java/lang/Object
+  #294 = NameAndType        #389:#390     // invoke:(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+  #295 = Utf8               Should have thrown java.lang.ArithmeticException: division by zero
+  #296 = NameAndType        #391:#342     // fail:(Ljava/lang/String;)V
+  #297 = Utf8               java/lang/reflect/InvocationTargetException
+  #298 = NameAndType        #392:#393     // getCause:()Ljava/lang/Throwable;
+  #299 = Utf8               java/lang/ArithmeticException
+  #300 = NameAndType        #394:#337     // getMessage:()Ljava/lang/String;
+  #301 = Utf8               division by zero
+  #302 = Utf8               gov/nasa/jpf/test/java/net/URLClassLoaderTest
+  #303 = Utf8               gov/nasa/jpf/test/java/net/LoadUtility
+  #304 = Utf8               java/net/MalformedURLException
+  #305 = Utf8               [Ljava/lang/Class;
+  #306 = Utf8               java/util/Enumeration
+  #307 = Utf8               java/util/List
+  #308 = Utf8               java/io/IOException
+  #309 = Utf8               java/lang/reflect/Method
+  #310 = Utf8               java/lang/Throwable
+  #311 = Utf8               java/lang/SecurityException
+  #312 = Utf8               java/lang/NoSuchMethodException
+  #313 = Utf8               java/lang/IllegalAccessException
+  #314 = Utf8               replace
+  #315 = Utf8               (Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+  #316 = Utf8               verifyUnhandledException
+  #317 = Utf8               (Ljava/lang/String;[Ljava/lang/String;)Z
+  #318 = Utf8               ([Ljava/net/URL;)V
+  #319 = Utf8               verifyNoPropertyViolation
+  #320 = Utf8               ([Ljava/lang/String;)Z
+  #321 = Utf8               getParent
+  #322 = Utf8               ()Ljava/lang/ClassLoader;
+  #323 = Utf8               assertNotNull
+  #324 = Utf8               (Ljava/lang/Object;)V
+  #325 = Utf8               java/lang/ClassLoader
+  #326 = Utf8               getSystemClassLoader
+  #327 = Utf8               assertEquals
+  #328 = Utf8               (Ljava/lang/Object;Ljava/lang/Object;)V
+  #329 = Utf8               (Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;[Ljava/net/URL;)V
+  #330 = Utf8               ([Ljava/net/URL;Ljava/lang/ClassLoader;)V
+  #331 = Utf8               loadClass
+  #332 = Utf8               (Ljava/lang/String;)Ljava/lang/Class;
+  #333 = Utf8               assertSame
+  #334 = Utf8               getClassLoader
+  #335 = Utf8               (Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;[Ljava/net/URL;Ljava/lang/ClassLoader;)V
+  #336 = Utf8               getName
+  #337 = Utf8               ()Ljava/lang/String;
+  #338 = Utf8               getLoadedClass
+  #339 = Utf8               assertNull
+  #340 = Utf8               movePkgOut
+  #341 = Utf8               dirUrl
+  #342 = Utf8               (Ljava/lang/String;)V
+  #343 = Utf8               pkg
+  #344 = Methodref          #395.#396     // java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #345 = Utf8               \u0001.Class1
+  #346 = Utf8               makeConcatWithConstants
+  #347 = Utf8               assertFalse
+  #348 = Utf8               (Z)V
+  #349 = Utf8               getInterfaces
+  #350 = Utf8               ()[Ljava/lang/Class;
+  #351 = Utf8               (II)V
+  #352 = Utf8               jarUrl
+  #353 = Utf8               movePkgBack
+  #354 = Utf8               \u0001/Class1.class
+  #355 = Utf8               findResource
+  #356 = Utf8               (Ljava/lang/String;)Ljava/net/URL;
+  #357 = Utf8               \u0001/\u0001
+  #358 = Utf8               (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+  #359 = Utf8               toString
+  #360 = Utf8               \u0001/Interface1.class
+  #361 = Utf8               \u0001\u0001
+  #362 = Utf8               findResources
+  #363 = Utf8               (Ljava/lang/String;)Ljava/util/Enumeration;
+  #364 = Utf8               hasMoreElements
+  #365 = Utf8               ()Z
+  #366 = Utf8               nextElement
+  #367 = Utf8               ()Ljava/lang/Object;
+  #368 = Utf8               add
+  #369 = Utf8               (Ljava/lang/Object;)Z
+  #370 = Utf8               contains
+  #371 = Utf8               assertTrue
+  #372 = Utf8               size
+  #373 = Utf8               ()I
+  #374 = Utf8               getURLs
+  #375 = Utf8               ()[Ljava/net/URL;
+  #376 = Utf8               newInstance
+  #377 = Utf8               ([Ljava/net/URL;)Ljava/net/URLClassLoader;
+  #378 = Utf8               getResource
+  #379 = Utf8               ([Ljava/net/URL;Ljava/lang/ClassLoader;)Ljava/net/URLClassLoader;
+  #380 = Utf8               delegateTofindSystemClass
+  #381 = Utf8               getPackages
+  #382 = Utf8               ()[Ljava/lang/Package;
+  #383 = Utf8               java/lang/Package
+  #384 = Utf8               equals
+  #385 = Utf8               getDefinedPackage
+  #386 = Utf8               (Ljava/lang/String;)Ljava/lang/Package;
+  #387 = Utf8               getMethod
+  #388 = Utf8               (Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+  #389 = Utf8               invoke
+  #390 = Utf8               (Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+  #391 = Utf8               fail
+  #392 = Utf8               getCause
+  #393 = Utf8               ()Ljava/lang/Throwable;
+  #394 = Utf8               getMessage
+  #395 = Class              #397          // java/lang/invoke/StringConcatFactory
+  #396 = NameAndType        #346:#400     // makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #397 = Utf8               java/lang/invoke/StringConcatFactory
+  #398 = Class              #402          // java/lang/invoke/MethodHandles$Lookup
+  #399 = Utf8               Lookup
+  #400 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #401 = Class              #403          // java/lang/invoke/MethodHandles
+  #402 = Utf8               java/lang/invoke/MethodHandles$Lookup
+  #403 = Utf8               java/lang/invoke/MethodHandles
+{
+  public gov.nasa.jpf.test.java.net.URLClassLoaderTest();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method gov/nasa/jpf/test/java/net/LoadUtility."<init>":()V
+         4: return
+      LineNumberTable:
+        line 37: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;
+
+  public java.lang.String checkUrl(java.lang.String);
+    descriptor: (Ljava/lang/String;)Ljava/lang/String;
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=3, locals=2, args_size=2
+         0: aload_1
+         1: ldc           #2                  // String \\
+         3: ldc           #3                  // String /
+         5: invokevirtual #4                  // Method java/lang/String.replace:(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+         8: areturn
+      LineNumberTable:
+        line 69: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       9     0  this   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;
+            0       9     1   url   Ljava/lang/String;
+
+  public void testConstructor_NullPointerException();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=3, locals=1, args_size=1
+         0: aload_0
+         1: ldc           #5                  // String java.lang.NullPointerException
+         3: iconst_0
+         4: anewarray     #6                  // class java/lang/String
+         7: invokevirtual #7                  // Method verifyUnhandledException:(Ljava/lang/String;[Ljava/lang/String;)Z
+        10: ifeq          22
+        13: new           #8                  // class java/net/URLClassLoader
+        16: dup
+        17: aconst_null
+        18: invokespecial #9                  // Method java/net/URLClassLoader."<init>":([Ljava/net/URL;)V
+        21: pop
+        22: return
+      LineNumberTable:
+        line 73: 0
+        line 74: 13
+        line 76: 22
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      23     0  this   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;
+      StackMapTable: number_of_entries = 1
+        frame_type = 22 /* same */
+    RuntimeVisibleAnnotations:
+      0: #119()
+        org.junit.Test
+
+  public void testConstructorEmptyURLs();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=3, locals=2, args_size=1
+         0: aload_0
+         1: iconst_0
+         2: anewarray     #6                  // class java/lang/String
+         5: invokevirtual #10                 // Method verifyNoPropertyViolation:([Ljava/lang/String;)Z
+         8: ifeq          40
+        11: new           #8                  // class java/net/URLClassLoader
+        14: dup
+        15: iconst_0
+        16: anewarray     #11                 // class java/net/URL
+        19: invokespecial #9                  // Method java/net/URLClassLoader."<init>":([Ljava/net/URL;)V
+        22: astore_1
+        23: aload_1
+        24: invokevirtual #12                 // Method java/net/URLClassLoader.getParent:()Ljava/lang/ClassLoader;
+        27: invokestatic  #13                 // Method assertNotNull:(Ljava/lang/Object;)V
+        30: aload_1
+        31: invokevirtual #12                 // Method java/net/URLClassLoader.getParent:()Ljava/lang/ClassLoader;
+        34: invokestatic  #14                 // Method java/lang/ClassLoader.getSystemClassLoader:()Ljava/lang/ClassLoader;
+        37: invokestatic  #15                 // Method assertEquals:(Ljava/lang/Object;Ljava/lang/Object;)V
+        40: return
+      LineNumberTable:
+        line 80: 0
+        line 81: 11
+        line 82: 23
+        line 83: 30
+        line 85: 40
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           23      17     1    cl   Ljava/net/URLClassLoader;
+            0      41     0  this   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;
+      StackMapTable: number_of_entries = 1
+        frame_type = 40 /* same */
+    RuntimeVisibleAnnotations:
+      0: #119()
+        org.junit.Test
+
+  public void testConstructorParent();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=4, locals=4, args_size=1
+         0: aload_0
+         1: iconst_0
+         2: anewarray     #6                  // class java/lang/String
+         5: invokevirtual #10                 // Method verifyNoPropertyViolation:([Ljava/lang/String;)Z
+         8: ifeq          68
+        11: iconst_0
+        12: anewarray     #11                 // class java/net/URL
+        15: astore_1
+        16: new           #16                 // class gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader
+        19: dup
+        20: aload_0
+        21: aload_1
+        22: invokespecial #17                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader."<init>":(Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;[Ljava/net/URL;)V
+        25: astore_2
+        26: new           #8                  // class java/net/URLClassLoader
+        29: dup
+        30: aload_1
+        31: aload_2
+        32: invokespecial #18                 // Method java/net/URLClassLoader."<init>":([Ljava/net/URL;Ljava/lang/ClassLoader;)V
+        35: astore_3
+        36: aload_2
+        37: invokevirtual #19                 // Method java/lang/ClassLoader.getParent:()Ljava/lang/ClassLoader;
+        40: invokestatic  #13                 // Method assertNotNull:(Ljava/lang/Object;)V
+        43: aload_2
+        44: invokevirtual #19                 // Method java/lang/ClassLoader.getParent:()Ljava/lang/ClassLoader;
+        47: invokestatic  #14                 // Method java/lang/ClassLoader.getSystemClassLoader:()Ljava/lang/ClassLoader;
+        50: invokestatic  #15                 // Method assertEquals:(Ljava/lang/Object;Ljava/lang/Object;)V
+        53: aload_3
+        54: invokevirtual #12                 // Method java/net/URLClassLoader.getParent:()Ljava/lang/ClassLoader;
+        57: invokestatic  #13                 // Method assertNotNull:(Ljava/lang/Object;)V
+        60: aload_3
+        61: invokevirtual #12                 // Method java/net/URLClassLoader.getParent:()Ljava/lang/ClassLoader;
+        64: aload_2
+        65: invokestatic  #15                 // Method assertEquals:(Ljava/lang/Object;Ljava/lang/Object;)V
+        68: return
+      LineNumberTable:
+        line 89: 0
+        line 90: 11
+        line 91: 16
+        line 92: 26
+        line 94: 36
+        line 95: 43
+        line 97: 53
+        line 98: 60
+        line 100: 68
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           16      52     1  urls   [Ljava/net/URL;
+           26      42     2 parent   Ljava/lang/ClassLoader;
+           36      32     3    cl   Ljava/net/URLClassLoader;
+            0      69     0  this   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;
+      StackMapTable: number_of_entries = 1
+        frame_type = 251 /* same_frame_extended */
+          offset_delta = 68
+    RuntimeVisibleAnnotations:
+      0: #119()
+        org.junit.Test
+
+  public void testLoadClass_NoClassDefFoundError() throws java.lang.ClassNotFoundException;
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=3, locals=3, args_size=1
+         0: aload_0
+         1: ldc           #20                 // String java.lang.NoClassDefFoundError
+         3: iconst_0
+         4: anewarray     #6                  // class java/lang/String
+         7: invokevirtual #7                  // Method verifyUnhandledException:(Ljava/lang/String;[Ljava/lang/String;)Z
+        10: ifeq          34
+        13: iconst_0
+        14: anewarray     #11                 // class java/net/URL
+        17: astore_1
+        18: new           #8                  // class java/net/URLClassLoader
+        21: dup
+        22: aload_1
+        23: invokespecial #9                  // Method java/net/URLClassLoader."<init>":([Ljava/net/URL;)V
+        26: astore_2
+        27: aload_2
+        28: ldc           #21                 // String java/lang/Class
+        30: invokevirtual #22                 // Method java/net/URLClassLoader.loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+        33: pop
+        34: return
+      LineNumberTable:
+        line 104: 0
+        line 105: 13
+        line 106: 18
+        line 107: 27
+        line 109: 34
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           18      16     1  urls   [Ljava/net/URL;
+           27       7     2    cl   Ljava/net/URLClassLoader;
+            0      35     0  this   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;
+      StackMapTable: number_of_entries = 1
+        frame_type = 34 /* same */
+    Exceptions:
+      throws java.lang.ClassNotFoundException
+    RuntimeVisibleAnnotations:
+      0: #119()
+        org.junit.Test
+
+  public void testLoadClass_ClassNotFoundException() throws java.lang.ClassNotFoundException;
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=3, locals=3, args_size=1
+         0: aload_0
+         1: ldc           #23                 // String java.lang.ClassNotFoundException
+         3: iconst_0
+         4: anewarray     #6                  // class java/lang/String
+         7: invokevirtual #7                  // Method verifyUnhandledException:(Ljava/lang/String;[Ljava/lang/String;)Z
+        10: ifeq          34
+        13: iconst_0
+        14: anewarray     #11                 // class java/net/URL
+        17: astore_1
+        18: new           #8                  // class java/net/URLClassLoader
+        21: dup
+        22: aload_1
+        23: invokespecial #9                  // Method java/net/URLClassLoader."<init>":([Ljava/net/URL;)V
+        26: astore_2
+        27: aload_2
+        28: ldc           #24                 // String java.lang.Does_Not_Exist
+        30: invokevirtual #22                 // Method java/net/URLClassLoader.loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+        33: pop
+        34: return
+      LineNumberTable:
+        line 113: 0
+        line 114: 13
+        line 115: 18
+        line 116: 27
+        line 118: 34
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           18      16     1  urls   [Ljava/net/URL;
+           27       7     2    cl   Ljava/net/URLClassLoader;
+            0      35     0  this   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;
+      StackMapTable: number_of_entries = 1
+        frame_type = 34 /* same */
+    Exceptions:
+      throws java.lang.ClassNotFoundException
+    RuntimeVisibleAnnotations:
+      0: #119()
+        org.junit.Test
+
+  public void testLoadClass_ClassNotFoundException2() throws java.lang.ClassNotFoundException;
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=3, locals=3, args_size=1
+         0: aload_0
+         1: ldc           #23                 // String java.lang.ClassNotFoundException
+         3: iconst_0
+         4: anewarray     #6                  // class java/lang/String
+         7: invokevirtual #7                  // Method verifyUnhandledException:(Ljava/lang/String;[Ljava/lang/String;)Z
+        10: ifeq          34
+        13: iconst_0
+        14: anewarray     #11                 // class java/net/URL
+        17: astore_1
+        18: new           #8                  // class java/net/URLClassLoader
+        21: dup
+        22: aload_1
+        23: invokespecial #9                  // Method java/net/URLClassLoader."<init>":([Ljava/net/URL;)V
+        26: astore_2
+        27: aload_2
+        28: ldc           #25                 // String java.lang.Class.class
+        30: invokevirtual #22                 // Method java/net/URLClassLoader.loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+        33: pop
+        34: return
+      LineNumberTable:
+        line 122: 0
+        line 123: 13
+        line 124: 18
+        line 125: 27
+        line 127: 34
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           18      16     1  urls   [Ljava/net/URL;
+           27       7     2    cl   Ljava/net/URLClassLoader;
+            0      35     0  this   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;
+      StackMapTable: number_of_entries = 1
+        frame_type = 34 /* same */
+    Exceptions:
+      throws java.lang.ClassNotFoundException
+    RuntimeVisibleAnnotations:
+      0: #119()
+        org.junit.Test
+
+  public void testSystemLoaderLoadClass() throws java.lang.ClassNotFoundException;
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=4, locals=9, args_size=1
+         0: aload_0
+         1: iconst_0
+         2: anewarray     #6                  // class java/lang/String
+         5: invokevirtual #10                 // Method verifyNoPropertyViolation:([Ljava/lang/String;)Z
+         8: ifeq          93
+        11: iconst_0
+        12: anewarray     #11                 // class java/net/URL
+        15: astore_1
+        16: invokestatic  #14                 // Method java/lang/ClassLoader.getSystemClassLoader:()Ljava/lang/ClassLoader;
+        19: astore_2
+        20: new           #16                 // class gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader
+        23: dup
+        24: aload_0
+        25: aload_1
+        26: invokespecial #17                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader."<init>":(Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;[Ljava/net/URL;)V
+        29: astore_3
+        30: new           #8                  // class java/net/URLClassLoader
+        33: dup
+        34: aload_1
+        35: aload_3
+        36: invokespecial #18                 // Method java/net/URLClassLoader."<init>":([Ljava/net/URL;Ljava/lang/ClassLoader;)V
+        39: astore        4
+        41: ldc           #26                 // String java.lang.Class
+        43: astore        5
+        45: aload_2
+        46: aload         5
+        48: invokevirtual #27                 // Method java/lang/ClassLoader.loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+        51: astore        6
+        53: aload_3
+        54: aload         5
+        56: invokevirtual #27                 // Method java/lang/ClassLoader.loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+        59: astore        7
+        61: aload         4
+        63: aload         5
+        65: invokevirtual #22                 // Method java/net/URLClassLoader.loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+        68: astore        8
+        70: aload         6
+        72: aload         7
+        74: invokestatic  #28                 // Method assertSame:(Ljava/lang/Object;Ljava/lang/Object;)V
+        77: aload         6
+        79: aload         8
+        81: invokestatic  #28                 // Method assertSame:(Ljava/lang/Object;Ljava/lang/Object;)V
+        84: aload         6
+        86: invokevirtual #29                 // Method java/lang/Class.getClassLoader:()Ljava/lang/ClassLoader;
+        89: aload_2
+        90: invokestatic  #28                 // Method assertSame:(Ljava/lang/Object;Ljava/lang/Object;)V
+        93: return
+      LineNumberTable:
+        line 131: 0
+        line 132: 11
+        line 133: 16
+        line 134: 20
+        line 135: 30
+        line 137: 41
+        line 138: 45
+        line 139: 53
+        line 140: 61
+        line 142: 70
+        line 143: 77
+        line 147: 84
+        line 149: 93
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           16      77     1  urls   [Ljava/net/URL;
+           20      73     2 systemCl   Ljava/lang/ClassLoader;
+           30      63     3 parent   Ljava/lang/ClassLoader;
+           41      52     4    cl   Ljava/net/URLClassLoader;
+           45      48     5 cname   Ljava/lang/String;
+           53      40     6    c1   Ljava/lang/Class;
+           61      32     7    c2   Ljava/lang/Class;
+           70      23     8    c3   Ljava/lang/Class;
+            0      94     0  this   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;
+      LocalVariableTypeTable:
+        Start  Length  Slot  Name   Signature
+           53      40     6    c1   Ljava/lang/Class<*>;
+           61      32     7    c2   Ljava/lang/Class<*>;
+           70      23     8    c3   Ljava/lang/Class<*>;
+      StackMapTable: number_of_entries = 1
+        frame_type = 251 /* same_frame_extended */
+          offset_delta = 93
+    Exceptions:
+      throws java.lang.ClassNotFoundException
+    RuntimeVisibleAnnotations:
+      0: #119()
+        org.junit.Test
+
+  public void testFindLoadedClass() throws java.lang.ClassNotFoundException, java.net.MalformedURLException;
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=5, locals=6, args_size=1
+         0: aload_0
+         1: iconst_0
+         2: anewarray     #6                  // class java/lang/String
+         5: invokevirtual #10                 // Method verifyNoPropertyViolation:([Ljava/lang/String;)Z
+         8: ifeq          82
+        11: iconst_0
+        12: anewarray     #11                 // class java/net/URL
+        15: astore_1
+        16: new           #16                 // class gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader
+        19: dup
+        20: aload_0
+        21: aload_1
+        22: invokespecial #17                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader."<init>":(Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;[Ljava/net/URL;)V
+        25: astore_2
+        26: new           #16                 // class gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader
+        29: dup
+        30: aload_0
+        31: aload_1
+        32: aload_2
+        33: invokespecial #30                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader."<init>":(Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;[Ljava/net/URL;Ljava/lang/ClassLoader;)V
+        36: astore_3
+        37: ldc           #26                 // String java.lang.Class
+        39: astore        4
+        41: aload_3
+        42: aload         4
+        44: invokevirtual #31                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader.loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+        47: astore        5
+        49: aload         5
+        51: invokestatic  #13                 // Method assertNotNull:(Ljava/lang/Object;)V
+        54: aload         5
+        56: invokevirtual #32                 // Method java/lang/Class.getName:()Ljava/lang/String;
+        59: aload         4
+        61: invokestatic  #15                 // Method assertEquals:(Ljava/lang/Object;Ljava/lang/Object;)V
+        64: aload_3
+        65: aload         4
+        67: invokevirtual #33                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader.getLoadedClass:(Ljava/lang/String;)Ljava/lang/Class;
+        70: invokestatic  #34                 // Method assertNull:(Ljava/lang/Object;)V
+        73: aload_2
+        74: aload         4
+        76: invokevirtual #33                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader.getLoadedClass:(Ljava/lang/String;)Ljava/lang/Class;
+        79: invokestatic  #34                 // Method assertNull:(Ljava/lang/Object;)V
+        82: return
+      LineNumberTable:
+        line 153: 0
+        line 154: 11
+        line 155: 16
+        line 156: 26
+        line 158: 37
+        line 160: 41
+        line 161: 49
+        line 162: 54
+        line 165: 64
+        line 166: 73
+        line 168: 82
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           16      66     1  urls   [Ljava/net/URL;
+           26      56     2  ucl1   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader;
+           37      45     3  ucl2   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader;
+           41      41     4 cname   Ljava/lang/String;
+           49      33     5     c   Ljava/lang/Class;
+            0      83     0  this   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;
+      LocalVariableTypeTable:
+        Start  Length  Slot  Name   Signature
+           49      33     5     c   Ljava/lang/Class<*>;
+      StackMapTable: number_of_entries = 1
+        frame_type = 251 /* same_frame_extended */
+          offset_delta = 82
+    Exceptions:
+      throws java.lang.ClassNotFoundException, java.net.MalformedURLException
+    RuntimeVisibleAnnotations:
+      0: #119()
+        org.junit.Test
+
+  public void testNonSystemLoaderLoadClass() throws java.net.MalformedURLException, java.lang.ClassNotFoundException;
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=6, locals=9, args_size=1
+         0: aload_0
+         1: invokevirtual #35                 // Method movePkgOut:()V
+         4: aload_0
+         5: iconst_0
+         6: anewarray     #6                  // class java/lang/String
+         9: invokevirtual #10                 // Method verifyNoPropertyViolation:([Ljava/lang/String;)Z
+        12: ifeq          262
+        15: iconst_1
+        16: anewarray     #11                 // class java/net/URL
+        19: dup
+        20: iconst_0
+        21: new           #11                 // class java/net/URL
+        24: dup
+        25: aload_0
+        26: getfield      #36                 // Field dirUrl:Ljava/lang/String;
+        29: invokespecial #37                 // Method java/net/URL."<init>":(Ljava/lang/String;)V
+        32: aastore
+        33: astore_1
+        34: new           #8                  // class java/net/URLClassLoader
+        37: dup
+        38: aload_1
+        39: invokespecial #9                  // Method java/net/URLClassLoader."<init>":([Ljava/net/URL;)V
+        42: astore_2
+        43: aload_0
+        44: getfield      #38                 // Field pkg:Ljava/lang/String;
+        47: invokedynamic #39,  0             // InvokeDynamic #0:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+        52: astore_3
+        53: aload_2
+        54: aload_3
+        55: invokevirtual #22                 // Method java/net/URLClassLoader.loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+        58: astore        4
+        60: aload         4
+        62: invokevirtual #29                 // Method java/lang/Class.getClassLoader:()Ljava/lang/ClassLoader;
+        65: aload_2
+        66: invokestatic  #15                 // Method assertEquals:(Ljava/lang/Object;Ljava/lang/Object;)V
+        69: aload         4
+        71: invokevirtual #29                 // Method java/lang/Class.getClassLoader:()Ljava/lang/ClassLoader;
+        74: invokestatic  #14                 // Method java/lang/ClassLoader.getSystemClassLoader:()Ljava/lang/ClassLoader;
+        77: if_acmpne     84
+        80: iconst_1
+        81: goto          85
+        84: iconst_0
+        85: invokestatic  #40                 // Method assertFalse:(Z)V
+        88: aload         4
+        90: invokevirtual #41                 // Method java/lang/Class.getInterfaces:()[Ljava/lang/Class;
+        93: arraylength
+        94: iconst_2
+        95: invokestatic  #42                 // Method assertEquals:(II)V
+        98: aload         4
+       100: invokevirtual #41                 // Method java/lang/Class.getInterfaces:()[Ljava/lang/Class;
+       103: astore        5
+       105: aload         5
+       107: arraylength
+       108: istore        6
+       110: iconst_0
+       111: istore        7
+       113: iload         7
+       115: iload         6
+       117: if_icmpge     146
+       120: aload         5
+       122: iload         7
+       124: aaload
+       125: astore        8
+       127: aload         4
+       129: invokevirtual #29                 // Method java/lang/Class.getClassLoader:()Ljava/lang/ClassLoader;
+       132: aload         8
+       134: invokevirtual #29                 // Method java/lang/Class.getClassLoader:()Ljava/lang/ClassLoader;
+       137: invokestatic  #15                 // Method assertEquals:(Ljava/lang/Object;Ljava/lang/Object;)V
+       140: iinc          7, 1
+       143: goto          113
+       146: aload_1
+       147: iconst_0
+       148: new           #11                 // class java/net/URL
+       151: dup
+       152: aload_0
+       153: getfield      #43                 // Field jarUrl:Ljava/lang/String;
+       156: invokespecial #37                 // Method java/net/URL."<init>":(Ljava/lang/String;)V
+       159: aastore
+       160: new           #8                  // class java/net/URLClassLoader
+       163: dup
+       164: aload_1
+       165: invokespecial #9                  // Method java/net/URLClassLoader."<init>":([Ljava/net/URL;)V
+       168: astore_2
+       169: aload_2
+       170: aload_3
+       171: invokevirtual #22                 // Method java/net/URLClassLoader.loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+       174: astore        4
+       176: aload         4
+       178: invokevirtual #29                 // Method java/lang/Class.getClassLoader:()Ljava/lang/ClassLoader;
+       181: aload_2
+       182: invokestatic  #15                 // Method assertEquals:(Ljava/lang/Object;Ljava/lang/Object;)V
+       185: aload         4
+       187: invokevirtual #29                 // Method java/lang/Class.getClassLoader:()Ljava/lang/ClassLoader;
+       190: invokestatic  #14                 // Method java/lang/ClassLoader.getSystemClassLoader:()Ljava/lang/ClassLoader;
+       193: if_acmpne     200
+       196: iconst_1
+       197: goto          201
+       200: iconst_0
+       201: invokestatic  #40                 // Method assertFalse:(Z)V
+       204: aload         4
+       206: invokevirtual #41                 // Method java/lang/Class.getInterfaces:()[Ljava/lang/Class;
+       209: arraylength
+       210: iconst_2
+       211: invokestatic  #42                 // Method assertEquals:(II)V
+       214: aload         4
+       216: invokevirtual #41                 // Method java/lang/Class.getInterfaces:()[Ljava/lang/Class;
+       219: astore        5
+       221: aload         5
+       223: arraylength
+       224: istore        6
+       226: iconst_0
+       227: istore        7
+       229: iload         7
+       231: iload         6
+       233: if_icmpge     262
+       236: aload         5
+       238: iload         7
+       240: aaload
+       241: astore        8
+       243: aload         4
+       245: invokevirtual #29                 // Method java/lang/Class.getClassLoader:()Ljava/lang/ClassLoader;
+       248: aload         8
+       250: invokevirtual #29                 // Method java/lang/Class.getClassLoader:()Ljava/lang/ClassLoader;
+       253: invokestatic  #15                 // Method assertEquals:(Ljava/lang/Object;Ljava/lang/Object;)V
+       256: iinc          7, 1
+       259: goto          229
+       262: aload_0
+       263: invokevirtual #44                 // Method movePkgBack:()V
+       266: return
+      LineNumberTable:
+        line 172: 0
+        line 173: 4
+        line 175: 15
+        line 176: 34
+        line 178: 43
+        line 179: 53
+        line 181: 60
+        line 182: 69
+        line 184: 88
+        line 185: 98
+        line 186: 127
+        line 185: 140
+        line 190: 146
+        line 191: 160
+        line 192: 169
+        line 194: 176
+        line 195: 185
+        line 196: 204
+        line 197: 214
+        line 198: 243
+        line 197: 256
+        line 201: 262
+        line 202: 266
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+          127      13     8   ifc   Ljava/lang/Class;
+          243      13     8   ifc   Ljava/lang/Class;
+           34     228     1  urls   [Ljava/net/URL;
+           43     219     2    cl   Ljava/net/URLClassLoader;
+           53     209     3 cname   Ljava/lang/String;
+           60     202     4   cls   Ljava/lang/Class;
+            0     267     0  this   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;
+      LocalVariableTypeTable:
+        Start  Length  Slot  Name   Signature
+          127      13     8   ifc   Ljava/lang/Class<*>;
+          243      13     8   ifc   Ljava/lang/Class<*>;
+           60     202     4   cls   Ljava/lang/Class<*>;
+      StackMapTable: number_of_entries = 8
+        frame_type = 255 /* full_frame */
+          offset_delta = 84
+          locals = [ class gov/nasa/jpf/test/java/net/URLClassLoaderTest, class "[Ljava/net/URL;", class java/net/URLClassLoader, class java/lang/String, class java/lang/Class ]
+          stack = []
+        frame_type = 64 /* same_locals_1_stack_item */
+          stack = [ int ]
+        frame_type = 254 /* append */
+          offset_delta = 27
+          locals = [ class "[Ljava/lang/Class;", int, int ]
+        frame_type = 248 /* chop */
+          offset_delta = 32
+        frame_type = 53 /* same */
+        frame_type = 64 /* same_locals_1_stack_item */
+          stack = [ int ]
+        frame_type = 254 /* append */
+          offset_delta = 27
+          locals = [ class "[Ljava/lang/Class;", int, int ]
+        frame_type = 255 /* full_frame */
+          offset_delta = 32
+          locals = [ class gov/nasa/jpf/test/java/net/URLClassLoaderTest ]
+          stack = []
+    Exceptions:
+      throws java.net.MalformedURLException, java.lang.ClassNotFoundException
+    RuntimeVisibleAnnotations:
+      0: #119()
+        org.junit.Test
+
+  public void testFindResource() throws java.net.MalformedURLException;
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=6, locals=7, args_size=1
+         0: aload_0
+         1: invokevirtual #35                 // Method movePkgOut:()V
+         4: aload_0
+         5: iconst_0
+         6: anewarray     #6                  // class java/lang/String
+         9: invokevirtual #10                 // Method verifyNoPropertyViolation:([Ljava/lang/String;)Z
+        12: ifeq          287
+        15: iconst_1
+        16: anewarray     #11                 // class java/net/URL
+        19: dup
+        20: iconst_0
+        21: new           #11                 // class java/net/URL
+        24: dup
+        25: aload_0
+        26: getfield      #36                 // Field dirUrl:Ljava/lang/String;
+        29: invokespecial #37                 // Method java/net/URL."<init>":(Ljava/lang/String;)V
+        32: aastore
+        33: astore_1
+        34: new           #8                  // class java/net/URLClassLoader
+        37: dup
+        38: aload_1
+        39: invokespecial #9                  // Method java/net/URLClassLoader."<init>":([Ljava/net/URL;)V
+        42: astore_2
+        43: aload_0
+        44: getfield      #38                 // Field pkg:Ljava/lang/String;
+        47: invokedynamic #45,  0             // InvokeDynamic #1:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+        52: astore_3
+        53: aload_2
+        54: aload_3
+        55: invokevirtual #46                 // Method java/net/URLClassLoader.findResource:(Ljava/lang/String;)Ljava/net/URL;
+        58: astore        4
+        60: aload_0
+        61: getfield      #36                 // Field dirUrl:Ljava/lang/String;
+        64: aload_3
+        65: invokedynamic #47,  0             // InvokeDynamic #2:makeConcatWithConstants:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+        70: astore        5
+        72: aload_0
+        73: aload         5
+        75: invokevirtual #48                 // Method checkUrl:(Ljava/lang/String;)Ljava/lang/String;
+        78: astore        5
+        80: aload         4
+        82: invokevirtual #49                 // Method java/net/URL.toString:()Ljava/lang/String;
+        85: aload         5
+        87: invokestatic  #15                 // Method assertEquals:(Ljava/lang/Object;Ljava/lang/Object;)V
+        90: aload_0
+        91: getfield      #38                 // Field pkg:Ljava/lang/String;
+        94: invokedynamic #50,  0             // InvokeDynamic #3:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+        99: astore        6
+       101: aload_2
+       102: aload         6
+       104: invokevirtual #46                 // Method java/net/URLClassLoader.findResource:(Ljava/lang/String;)Ljava/net/URL;
+       107: astore        4
+       109: aload_0
+       110: getfield      #36                 // Field dirUrl:Ljava/lang/String;
+       113: aload         6
+       115: invokedynamic #47,  0             // InvokeDynamic #2:makeConcatWithConstants:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+       120: astore        5
+       122: aload_0
+       123: aload         5
+       125: invokevirtual #48                 // Method checkUrl:(Ljava/lang/String;)Ljava/lang/String;
+       128: astore        5
+       130: aload         4
+       132: invokevirtual #49                 // Method java/net/URL.toString:()Ljava/lang/String;
+       135: aload         5
+       137: invokestatic  #15                 // Method assertEquals:(Ljava/lang/Object;Ljava/lang/Object;)V
+       140: aload_2
+       141: ldc           #51                 // String non_existence_resource
+       143: invokevirtual #46                 // Method java/net/URLClassLoader.findResource:(Ljava/lang/String;)Ljava/net/URL;
+       146: astore        4
+       148: aload         4
+       150: invokestatic  #34                 // Method assertNull:(Ljava/lang/Object;)V
+       153: aload_2
+       154: ldc           #52                 // String java/lang/Class.class
+       156: invokevirtual #46                 // Method java/net/URLClassLoader.findResource:(Ljava/lang/String;)Ljava/net/URL;
+       159: astore        4
+       161: aload         4
+       163: invokestatic  #34                 // Method assertNull:(Ljava/lang/Object;)V
+       166: aload_0
+       167: aload_0
+       168: aload_0
+       169: getfield      #43                 // Field jarUrl:Ljava/lang/String;
+       172: invokevirtual #48                 // Method checkUrl:(Ljava/lang/String;)Ljava/lang/String;
+       175: putfield      #43                 // Field jarUrl:Ljava/lang/String;
+       178: aload_1
+       179: iconst_0
+       180: new           #11                 // class java/net/URL
+       183: dup
+       184: aload_0
+       185: getfield      #43                 // Field jarUrl:Ljava/lang/String;
+       188: invokespecial #37                 // Method java/net/URL."<init>":(Ljava/lang/String;)V
+       191: aastore
+       192: new           #8                  // class java/net/URLClassLoader
+       195: dup
+       196: aload_1
+       197: invokespecial #9                  // Method java/net/URLClassLoader."<init>":([Ljava/net/URL;)V
+       200: astore_2
+       201: aload_2
+       202: aload_3
+       203: invokevirtual #46                 // Method java/net/URLClassLoader.findResource:(Ljava/lang/String;)Ljava/net/URL;
+       206: astore        4
+       208: aload_0
+       209: getfield      #43                 // Field jarUrl:Ljava/lang/String;
+       212: aload_3
+       213: invokedynamic #53,  0             // InvokeDynamic #4:makeConcatWithConstants:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+       218: astore        5
+       220: aload         4
+       222: invokevirtual #49                 // Method java/net/URL.toString:()Ljava/lang/String;
+       225: aload         5
+       227: invokestatic  #15                 // Method assertEquals:(Ljava/lang/Object;Ljava/lang/Object;)V
+       230: aload_2
+       231: aload         6
+       233: invokevirtual #46                 // Method java/net/URLClassLoader.findResource:(Ljava/lang/String;)Ljava/net/URL;
+       236: astore        4
+       238: aload_0
+       239: getfield      #43                 // Field jarUrl:Ljava/lang/String;
+       242: aload         6
+       244: invokedynamic #53,  0             // InvokeDynamic #4:makeConcatWithConstants:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+       249: astore        5
+       251: aload         4
+       253: invokevirtual #49                 // Method java/net/URL.toString:()Ljava/lang/String;
+       256: aload         5
+       258: invokestatic  #15                 // Method assertEquals:(Ljava/lang/Object;Ljava/lang/Object;)V
+       261: aload_2
+       262: ldc           #51                 // String non_existence_resource
+       264: invokevirtual #46                 // Method java/net/URLClassLoader.findResource:(Ljava/lang/String;)Ljava/net/URL;
+       267: astore        4
+       269: aload         4
+       271: invokestatic  #34                 // Method assertNull:(Ljava/lang/Object;)V
+       274: aload_2
+       275: ldc           #52                 // String java/lang/Class.class
+       277: invokevirtual #46                 // Method java/net/URLClassLoader.findResource:(Ljava/lang/String;)Ljava/net/URL;
+       280: astore        4
+       282: aload         4
+       284: invokestatic  #34                 // Method assertNull:(Ljava/lang/Object;)V
+       287: aload_0
+       288: invokevirtual #44                 // Method movePkgBack:()V
+       291: return
+      LineNumberTable:
+        line 206: 0
+        line 207: 4
+        line 208: 15
+        line 209: 34
+        line 211: 43
+        line 212: 53
+        line 213: 60
+        line 214: 72
+        line 215: 80
+        line 217: 90
+        line 218: 101
+        line 219: 109
+        line 220: 122
+        line 221: 130
+        line 223: 140
+        line 224: 148
+        line 226: 153
+        line 227: 161
+        line 230: 166
+        line 231: 178
+        line 232: 192
+        line 233: 201
+        line 234: 208
+        line 235: 220
+        line 237: 230
+        line 238: 238
+        line 239: 251
+        line 241: 261
+        line 242: 269
+        line 244: 274
+        line 245: 282
+        line 247: 287
+        line 248: 291
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           34     253     1  urls   [Ljava/net/URL;
+           43     244     2    cl   Ljava/net/URLClassLoader;
+           53     234     3 resClass1   Ljava/lang/String;
+           60     227     4   url   Ljava/net/URL;
+           72     215     5 expectedUrl   Ljava/lang/String;
+          101     186     6 resInterface1   Ljava/lang/String;
+            0     292     0  this   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;
+      StackMapTable: number_of_entries = 1
+        frame_type = 251 /* same_frame_extended */
+          offset_delta = 287
+    Exceptions:
+      throws java.net.MalformedURLException
+    RuntimeVisibleAnnotations:
+      0: #119()
+        org.junit.Test
+
+  public void testFindResources() throws java.io.IOException;
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=6, locals=6, args_size=1
+         0: aload_0
+         1: invokevirtual #35                 // Method movePkgOut:()V
+         4: aload_0
+         5: iconst_0
+         6: anewarray     #6                  // class java/lang/String
+         9: invokevirtual #10                 // Method verifyNoPropertyViolation:([Ljava/lang/String;)Z
+        12: ifeq          204
+        15: iconst_3
+        16: anewarray     #11                 // class java/net/URL
+        19: dup
+        20: iconst_0
+        21: new           #11                 // class java/net/URL
+        24: dup
+        25: aload_0
+        26: getfield      #36                 // Field dirUrl:Ljava/lang/String;
+        29: invokespecial #37                 // Method java/net/URL."<init>":(Ljava/lang/String;)V
+        32: aastore
+        33: dup
+        34: iconst_1
+        35: new           #11                 // class java/net/URL
+        38: dup
+        39: aload_0
+        40: getfield      #43                 // Field jarUrl:Ljava/lang/String;
+        43: invokespecial #37                 // Method java/net/URL."<init>":(Ljava/lang/String;)V
+        46: aastore
+        47: dup
+        48: iconst_2
+        49: new           #11                 // class java/net/URL
+        52: dup
+        53: aload_0
+        54: getfield      #43                 // Field jarUrl:Ljava/lang/String;
+        57: invokespecial #37                 // Method java/net/URL."<init>":(Ljava/lang/String;)V
+        60: aastore
+        61: astore_1
+        62: new           #8                  // class java/net/URLClassLoader
+        65: dup
+        66: aload_1
+        67: invokespecial #9                  // Method java/net/URLClassLoader."<init>":([Ljava/net/URL;)V
+        70: astore_2
+        71: aload_0
+        72: getfield      #38                 // Field pkg:Ljava/lang/String;
+        75: invokedynamic #45,  0             // InvokeDynamic #1:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+        80: astore_3
+        81: aload_2
+        82: aload_3
+        83: invokevirtual #54                 // Method java/net/URLClassLoader.findResources:(Ljava/lang/String;)Ljava/util/Enumeration;
+        86: astore        4
+        88: new           #55                 // class java/util/ArrayList
+        91: dup
+        92: invokespecial #56                 // Method java/util/ArrayList."<init>":()V
+        95: astore        5
+        97: aload         4
+        99: invokeinterface #57,  1           // InterfaceMethod java/util/Enumeration.hasMoreElements:()Z
+       104: ifeq          131
+       107: aload         5
+       109: aload         4
+       111: invokeinterface #58,  1           // InterfaceMethod java/util/Enumeration.nextElement:()Ljava/lang/Object;
+       116: checkcast     #11                 // class java/net/URL
+       119: invokevirtual #49                 // Method java/net/URL.toString:()Ljava/lang/String;
+       122: invokeinterface #59,  2           // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+       127: pop
+       128: goto          97
+       131: aload         5
+       133: aload_0
+       134: getfield      #43                 // Field jarUrl:Ljava/lang/String;
+       137: aload_3
+       138: invokedynamic #53,  0             // InvokeDynamic #4:makeConcatWithConstants:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+       143: invokeinterface #60,  2           // InterfaceMethod java/util/List.contains:(Ljava/lang/Object;)Z
+       148: invokestatic  #61                 // Method assertTrue:(Z)V
+       151: aload         5
+       153: aload_0
+       154: getfield      #36                 // Field dirUrl:Ljava/lang/String;
+       157: aload_3
+       158: invokedynamic #47,  0             // InvokeDynamic #2:makeConcatWithConstants:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+       163: invokeinterface #60,  2           // InterfaceMethod java/util/List.contains:(Ljava/lang/Object;)Z
+       168: invokestatic  #61                 // Method assertTrue:(Z)V
+       171: aload         5
+       173: invokeinterface #62,  1           // InterfaceMethod java/util/List.size:()I
+       178: iconst_2
+       179: invokestatic  #42                 // Method assertEquals:(II)V
+       182: aload_2
+       183: aconst_null
+       184: invokevirtual #54                 // Method java/net/URLClassLoader.findResources:(Ljava/lang/String;)Ljava/util/Enumeration;
+       187: astore        4
+       189: aload         4
+       191: invokestatic  #13                 // Method assertNotNull:(Ljava/lang/Object;)V
+       194: aload         4
+       196: invokeinterface #57,  1           // InterfaceMethod java/util/Enumeration.hasMoreElements:()Z
+       201: invokestatic  #40                 // Method assertFalse:(Z)V
+       204: aload_0
+       205: invokevirtual #44                 // Method movePkgBack:()V
+       208: return
+      LineNumberTable:
+        line 252: 0
+        line 253: 4
+        line 254: 15
+        line 255: 62
+        line 256: 71
+        line 257: 81
+        line 259: 88
+        line 260: 97
+        line 261: 107
+        line 264: 131
+        line 265: 151
+        line 269: 171
+        line 271: 182
+        line 272: 189
+        line 273: 194
+        line 275: 204
+        line 276: 208
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           62     142     1  urls   [Ljava/net/URL;
+           71     133     2    cl   Ljava/net/URLClassLoader;
+           81     123     3 resource   Ljava/lang/String;
+           88     116     4     e   Ljava/util/Enumeration;
+           97     107     5 urlList   Ljava/util/List;
+            0     209     0  this   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;
+      LocalVariableTypeTable:
+        Start  Length  Slot  Name   Signature
+           88     116     4     e   Ljava/util/Enumeration<Ljava/net/URL;>;
+           97     107     5 urlList   Ljava/util/List<Ljava/lang/String;>;
+      StackMapTable: number_of_entries = 3
+        frame_type = 255 /* full_frame */
+          offset_delta = 97
+          locals = [ class gov/nasa/jpf/test/java/net/URLClassLoaderTest, class "[Ljava/net/URL;", class java/net/URLClassLoader, class java/lang/String, class java/util/Enumeration, class java/util/List ]
+          stack = []
+        frame_type = 33 /* same */
+        frame_type = 255 /* full_frame */
+          offset_delta = 72
+          locals = [ class gov/nasa/jpf/test/java/net/URLClassLoaderTest ]
+          stack = []
+    Exceptions:
+      throws java.io.IOException
+    RuntimeVisibleAnnotations:
+      0: #119()
+        org.junit.Test
+
+  public void testGetURLs() throws java.net.MalformedURLException;
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=5, locals=5, args_size=1
+         0: aload_0
+         1: iconst_0
+         2: anewarray     #6                  // class java/lang/String
+         5: invokevirtual #10                 // Method verifyNoPropertyViolation:([Ljava/lang/String;)Z
+         8: ifeq          128
+        11: iconst_5
+        12: anewarray     #11                 // class java/net/URL
+        15: astore_1
+        16: aload_1
+        17: iconst_0
+        18: new           #11                 // class java/net/URL
+        21: dup
+        22: ldc           #63                 // String file:///x/y/z/
+        24: invokespecial #37                 // Method java/net/URL."<init>":(Ljava/lang/String;)V
+        27: aastore
+        28: aload_1
+        29: iconst_1
+        30: new           #11                 // class java/net/URL
+        33: dup
+        34: ldc           #64                 // String file:///a/b/c/
+        36: invokespecial #37                 // Method java/net/URL."<init>":(Ljava/lang/String;)V
+        39: aastore
+        40: aload_1
+        41: iconst_2
+        42: new           #11                 // class java/net/URL
+        45: dup
+        46: ldc           #64                 // String file:///a/b/c/
+        48: invokespecial #37                 // Method java/net/URL."<init>":(Ljava/lang/String;)V
+        51: aastore
+        52: aload_1
+        53: iconst_3
+        54: new           #11                 // class java/net/URL
+        57: dup
+        58: aload_0
+        59: getfield      #36                 // Field dirUrl:Ljava/lang/String;
+        62: invokespecial #37                 // Method java/net/URL."<init>":(Ljava/lang/String;)V
+        65: aastore
+        66: aload_1
+        67: iconst_4
+        68: new           #11                 // class java/net/URL
+        71: dup
+        72: aload_0
+        73: getfield      #43                 // Field jarUrl:Ljava/lang/String;
+        76: invokespecial #37                 // Method java/net/URL."<init>":(Ljava/lang/String;)V
+        79: aastore
+        80: new           #8                  // class java/net/URLClassLoader
+        83: dup
+        84: aload_1
+        85: invokespecial #9                  // Method java/net/URLClassLoader."<init>":([Ljava/net/URL;)V
+        88: astore_2
+        89: aload_2
+        90: invokevirtual #65                 // Method java/net/URLClassLoader.getURLs:()[Ljava/net/URL;
+        93: astore_3
+        94: aload_3
+        95: arraylength
+        96: aload_1
+        97: arraylength
+        98: invokestatic  #42                 // Method assertEquals:(II)V
+       101: iconst_0
+       102: istore        4
+       104: iload         4
+       106: aload_1
+       107: arraylength
+       108: if_icmpge     128
+       111: aload_3
+       112: iload         4
+       114: aaload
+       115: aload_1
+       116: iload         4
+       118: aaload
+       119: invokestatic  #15                 // Method assertEquals:(Ljava/lang/Object;Ljava/lang/Object;)V
+       122: iinc          4, 1
+       125: goto          104
+       128: return
+      LineNumberTable:
+        line 280: 0
+        line 281: 11
+        line 282: 16
+        line 283: 28
+        line 284: 40
+        line 285: 52
+        line 286: 66
+        line 288: 80
+        line 289: 89
+        line 291: 94
+        line 292: 101
+        line 293: 111
+        line 292: 122
+        line 296: 128
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+          104      24     4     i   I
+           16     112     1  urls   [Ljava/net/URL;
+           89      39     2    cl   Ljava/net/URLClassLoader;
+           94      34     3 clUrls   [Ljava/net/URL;
+            0     129     0  this   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;
+      StackMapTable: number_of_entries = 2
+        frame_type = 255 /* full_frame */
+          offset_delta = 104
+          locals = [ class gov/nasa/jpf/test/java/net/URLClassLoaderTest, class "[Ljava/net/URL;", class java/net/URLClassLoader, class "[Ljava/net/URL;", int ]
+          stack = []
+        frame_type = 255 /* full_frame */
+          offset_delta = 23
+          locals = [ class gov/nasa/jpf/test/java/net/URLClassLoaderTest ]
+          stack = []
+    Exceptions:
+      throws java.net.MalformedURLException
+    RuntimeVisibleAnnotations:
+      0: #119()
+        org.junit.Test
+
+  public void testNewInstance1() throws java.net.MalformedURLException, java.lang.ClassNotFoundException;
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=5, locals=5, args_size=1
+         0: aload_0
+         1: invokevirtual #35                 // Method movePkgOut:()V
+         4: aload_0
+         5: iconst_0
+         6: anewarray     #6                  // class java/lang/String
+         9: invokevirtual #10                 // Method verifyNoPropertyViolation:([Ljava/lang/String;)Z
+        12: ifeq          85
+        15: iconst_1
+        16: anewarray     #11                 // class java/net/URL
+        19: astore_1
+        20: aload_1
+        21: iconst_0
+        22: new           #11                 // class java/net/URL
+        25: dup
+        26: aload_0
+        27: getfield      #36                 // Field dirUrl:Ljava/lang/String;
+        30: invokespecial #37                 // Method java/net/URL."<init>":(Ljava/lang/String;)V
+        33: aastore
+        34: aload_1
+        35: invokestatic  #66                 // Method java/net/URLClassLoader.newInstance:([Ljava/net/URL;)Ljava/net/URLClassLoader;
+        38: astore_2
+        39: aload_2
+        40: aload_0
+        41: getfield      #38                 // Field pkg:Ljava/lang/String;
+        44: invokedynamic #39,  0             // InvokeDynamic #0:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+        49: invokevirtual #22                 // Method java/net/URLClassLoader.loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+        52: astore_3
+        53: aload_3
+        54: invokestatic  #13                 // Method assertNotNull:(Ljava/lang/Object;)V
+        57: aload_3
+        58: invokevirtual #29                 // Method java/lang/Class.getClassLoader:()Ljava/lang/ClassLoader;
+        61: aload_2
+        62: invokestatic  #28                 // Method assertSame:(Ljava/lang/Object;Ljava/lang/Object;)V
+        65: aload_2
+        66: aload_0
+        67: getfield      #38                 // Field pkg:Ljava/lang/String;
+        70: invokedynamic #50,  0             // InvokeDynamic #3:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+        75: invokevirtual #67                 // Method java/net/URLClassLoader.getResource:(Ljava/lang/String;)Ljava/net/URL;
+        78: astore        4
+        80: aload         4
+        82: invokestatic  #13                 // Method assertNotNull:(Ljava/lang/Object;)V
+        85: aload_0
+        86: invokevirtual #44                 // Method movePkgBack:()V
+        89: return
+      LineNumberTable:
+        line 300: 0
+        line 301: 4
+        line 302: 15
+        line 303: 20
+        line 304: 34
+        line 305: 39
+        line 306: 53
+        line 307: 57
+        line 308: 65
+        line 309: 80
+        line 311: 85
+        line 312: 89
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           20      65     1  urls   [Ljava/net/URL;
+           39      46     2    cl   Ljava/net/URLClassLoader;
+           53      32     3     c   Ljava/lang/Class;
+           80       5     4 resource   Ljava/net/URL;
+            0      90     0  this   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;
+      LocalVariableTypeTable:
+        Start  Length  Slot  Name   Signature
+           53      32     3     c   Ljava/lang/Class<*>;
+      StackMapTable: number_of_entries = 1
+        frame_type = 251 /* same_frame_extended */
+          offset_delta = 85
+    Exceptions:
+      throws java.net.MalformedURLException, java.lang.ClassNotFoundException
+    RuntimeVisibleAnnotations:
+      0: #119()
+        org.junit.Test
+
+  public void testNewInstance2() throws java.net.MalformedURLException, java.lang.ClassNotFoundException;
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=5, locals=7, args_size=1
+         0: aload_0
+         1: invokevirtual #35                 // Method movePkgOut:()V
+         4: aload_0
+         5: iconst_0
+         6: anewarray     #6                  // class java/lang/String
+         9: invokevirtual #10                 // Method verifyNoPropertyViolation:([Ljava/lang/String;)Z
+        12: ifeq          122
+        15: iconst_1
+        16: anewarray     #11                 // class java/net/URL
+        19: astore_1
+        20: aload_1
+        21: iconst_0
+        22: new           #11                 // class java/net/URL
+        25: dup
+        26: aload_0
+        27: getfield      #36                 // Field dirUrl:Ljava/lang/String;
+        30: invokespecial #37                 // Method java/net/URL."<init>":(Ljava/lang/String;)V
+        33: aastore
+        34: aload_1
+        35: invokestatic  #66                 // Method java/net/URLClassLoader.newInstance:([Ljava/net/URL;)Ljava/net/URLClassLoader;
+        38: astore_2
+        39: aload_1
+        40: aload_2
+        41: invokestatic  #68                 // Method java/net/URLClassLoader.newInstance:([Ljava/net/URL;Ljava/lang/ClassLoader;)Ljava/net/URLClassLoader;
+        44: astore_3
+        45: aload_2
+        46: aload_3
+        47: invokevirtual #12                 // Method java/net/URLClassLoader.getParent:()Ljava/lang/ClassLoader;
+        50: invokestatic  #28                 // Method assertSame:(Ljava/lang/Object;Ljava/lang/Object;)V
+        53: aload_3
+        54: aload_0
+        55: getfield      #38                 // Field pkg:Ljava/lang/String;
+        58: invokedynamic #39,  0             // InvokeDynamic #0:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+        63: invokevirtual #22                 // Method java/net/URLClassLoader.loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+        66: astore        4
+        68: aload         4
+        70: invokestatic  #13                 // Method assertNotNull:(Ljava/lang/Object;)V
+        73: aload         4
+        75: invokevirtual #29                 // Method java/lang/Class.getClassLoader:()Ljava/lang/ClassLoader;
+        78: aload_2
+        79: invokestatic  #28                 // Method assertSame:(Ljava/lang/Object;Ljava/lang/Object;)V
+        82: aload_0
+        83: getfield      #38                 // Field pkg:Ljava/lang/String;
+        86: invokedynamic #50,  0             // InvokeDynamic #3:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+        91: astore        5
+        93: aload_3
+        94: aload         5
+        96: invokevirtual #67                 // Method java/net/URLClassLoader.getResource:(Ljava/lang/String;)Ljava/net/URL;
+        99: astore        6
+       101: aload         6
+       103: invokestatic  #13                 // Method assertNotNull:(Ljava/lang/Object;)V
+       106: aload_3
+       107: invokevirtual #12                 // Method java/net/URLClassLoader.getParent:()Ljava/lang/ClassLoader;
+       110: aload         5
+       112: invokevirtual #69                 // Method java/lang/ClassLoader.getResource:(Ljava/lang/String;)Ljava/net/URL;
+       115: astore        6
+       117: aload         6
+       119: invokestatic  #13                 // Method assertNotNull:(Ljava/lang/Object;)V
+       122: aload_0
+       123: invokevirtual #44                 // Method movePkgBack:()V
+       126: return
+      LineNumberTable:
+        line 316: 0
+        line 317: 4
+        line 318: 15
+        line 319: 20
+        line 320: 34
+        line 321: 39
+        line 322: 45
+        line 324: 53
+        line 325: 68
+        line 326: 73
+        line 328: 82
+        line 329: 93
+        line 330: 101
+        line 332: 106
+        line 333: 117
+        line 335: 122
+        line 336: 126
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           20     102     1  urls   [Ljava/net/URL;
+           39      83     2 parent   Ljava/net/URLClassLoader;
+           45      77     3    cl   Ljava/net/URLClassLoader;
+           68      54     4     c   Ljava/lang/Class;
+           93      29     5 resName   Ljava/lang/String;
+          101      21     6 resource   Ljava/net/URL;
+            0     127     0  this   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;
+      LocalVariableTypeTable:
+        Start  Length  Slot  Name   Signature
+           68      54     4     c   Ljava/lang/Class<*>;
+      StackMapTable: number_of_entries = 1
+        frame_type = 251 /* same_frame_extended */
+          offset_delta = 122
+    Exceptions:
+      throws java.net.MalformedURLException, java.lang.ClassNotFoundException
+    RuntimeVisibleAnnotations:
+      0: #119()
+        org.junit.Test
+
+  public void testClassResolution() throws java.net.MalformedURLException, java.lang.ClassNotFoundException;
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=6, locals=11, args_size=1
+         0: aload_0
+         1: invokevirtual #35                 // Method movePkgOut:()V
+         4: aload_0
+         5: iconst_0
+         6: anewarray     #6                  // class java/lang/String
+         9: invokevirtual #10                 // Method verifyNoPropertyViolation:([Ljava/lang/String;)Z
+        12: ifeq          297
+        15: iconst_1
+        16: anewarray     #11                 // class java/net/URL
+        19: dup
+        20: iconst_0
+        21: new           #11                 // class java/net/URL
+        24: dup
+        25: aload_0
+        26: getfield      #36                 // Field dirUrl:Ljava/lang/String;
+        29: invokespecial #37                 // Method java/net/URL."<init>":(Ljava/lang/String;)V
+        32: aastore
+        33: astore_1
+        34: aload_0
+        35: getfield      #38                 // Field pkg:Ljava/lang/String;
+        38: invokedynamic #39,  0             // InvokeDynamic #0:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+        43: astore_2
+        44: ldc           #70                 // String java.lang.Object
+        46: astore_3
+        47: new           #71                 // class gov/nasa/jpf/test/java/net/URLClassLoaderTest$Standard
+        50: dup
+        51: aload_0
+        52: iconst_0
+        53: anewarray     #11                 // class java/net/URL
+        56: invokespecial #72                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$Standard."<init>":(Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;[Ljava/net/URL;)V
+        59: astore        4
+        61: new           #71                 // class gov/nasa/jpf/test/java/net/URLClassLoaderTest$Standard
+        64: dup
+        65: aload_0
+        66: aload_1
+        67: aload         4
+        69: invokespecial #73                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$Standard."<init>":(Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;[Ljava/net/URL;Ljava/lang/ClassLoader;)V
+        72: astore        5
+        74: new           #71                 // class gov/nasa/jpf/test/java/net/URLClassLoaderTest$Standard
+        77: dup
+        78: aload_0
+        79: aload_1
+        80: aload         5
+        82: invokespecial #73                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$Standard."<init>":(Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;[Ljava/net/URL;Ljava/lang/ClassLoader;)V
+        85: astore        6
+        87: aload         6
+        89: aload_2
+        90: invokevirtual #74                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$Standard.loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+        93: astore        7
+        95: aload         7
+        97: invokevirtual #29                 // Method java/lang/Class.getClassLoader:()Ljava/lang/ClassLoader;
+       100: aload         5
+       102: invokestatic  #15                 // Method assertEquals:(Ljava/lang/Object;Ljava/lang/Object;)V
+       105: aload         6
+       107: aload_3
+       108: invokevirtual #74                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$Standard.loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+       111: astore        7
+       113: aload         7
+       115: invokevirtual #29                 // Method java/lang/Class.getClassLoader:()Ljava/lang/ClassLoader;
+       118: invokestatic  #14                 // Method java/lang/ClassLoader.getSystemClassLoader:()Ljava/lang/ClassLoader;
+       121: invokestatic  #15                 // Method assertEquals:(Ljava/lang/Object;Ljava/lang/Object;)V
+       124: new           #75                 // class gov/nasa/jpf/test/java/net/URLClassLoaderTest$Custom
+       127: dup
+       128: aload_0
+       129: aload_1
+       130: aconst_null
+       131: invokespecial #76                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$Custom."<init>":(Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;[Ljava/net/URL;Ljava/lang/ClassLoader;)V
+       134: astore        8
+       136: new           #71                 // class gov/nasa/jpf/test/java/net/URLClassLoaderTest$Standard
+       139: dup
+       140: aload_0
+       141: aload_1
+       142: aload         8
+       144: invokespecial #73                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$Standard."<init>":(Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;[Ljava/net/URL;Ljava/lang/ClassLoader;)V
+       147: astore        9
+       149: aload         9
+       151: aload_2
+       152: invokevirtual #74                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$Standard.loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+       155: astore        7
+       157: aload         7
+       159: invokevirtual #29                 // Method java/lang/Class.getClassLoader:()Ljava/lang/ClassLoader;
+       162: aload         8
+       164: invokestatic  #15                 // Method assertEquals:(Ljava/lang/Object;Ljava/lang/Object;)V
+       167: aload         8
+       169: aload_2
+       170: invokevirtual #77                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$Custom.loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+       173: astore        10
+       175: aload         7
+       177: aload         10
+       179: invokestatic  #28                 // Method assertSame:(Ljava/lang/Object;Ljava/lang/Object;)V
+       182: aload         9
+       184: aload_3
+       185: invokevirtual #74                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$Standard.loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+       188: astore        7
+       190: aload         7
+       192: invokevirtual #29                 // Method java/lang/Class.getClassLoader:()Ljava/lang/ClassLoader;
+       195: invokestatic  #14                 // Method java/lang/ClassLoader.getSystemClassLoader:()Ljava/lang/ClassLoader;
+       198: invokestatic  #15                 // Method assertEquals:(Ljava/lang/Object;Ljava/lang/Object;)V
+       201: aload         7
+       203: aload         8
+       205: aload_3
+       206: invokevirtual #77                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$Custom.loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+       209: invokestatic  #28                 // Method assertSame:(Ljava/lang/Object;Ljava/lang/Object;)V
+       212: new           #75                 // class gov/nasa/jpf/test/java/net/URLClassLoaderTest$Custom
+       215: dup
+       216: aload_0
+       217: aload_1
+       218: aload         6
+       220: invokespecial #76                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$Custom."<init>":(Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;[Ljava/net/URL;Ljava/lang/ClassLoader;)V
+       223: astore        8
+       225: new           #71                 // class gov/nasa/jpf/test/java/net/URLClassLoaderTest$Standard
+       228: dup
+       229: aload_0
+       230: aload_1
+       231: aload         8
+       233: invokespecial #73                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$Standard."<init>":(Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;[Ljava/net/URL;Ljava/lang/ClassLoader;)V
+       236: astore        9
+       238: aload         9
+       240: aload_2
+       241: invokevirtual #74                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$Standard.loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+       244: astore        7
+       246: aload         7
+       248: invokevirtual #29                 // Method java/lang/Class.getClassLoader:()Ljava/lang/ClassLoader;
+       251: aload         5
+       253: invokestatic  #15                 // Method assertEquals:(Ljava/lang/Object;Ljava/lang/Object;)V
+       256: aload         7
+       258: aload         8
+       260: aload_2
+       261: invokevirtual #77                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$Custom.loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+       264: invokestatic  #28                 // Method assertSame:(Ljava/lang/Object;Ljava/lang/Object;)V
+       267: aload         9
+       269: aload_3
+       270: invokevirtual #74                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$Standard.loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+       273: astore        7
+       275: aload         7
+       277: invokevirtual #29                 // Method java/lang/Class.getClassLoader:()Ljava/lang/ClassLoader;
+       280: invokestatic  #14                 // Method java/lang/ClassLoader.getSystemClassLoader:()Ljava/lang/ClassLoader;
+       283: invokestatic  #15                 // Method assertEquals:(Ljava/lang/Object;Ljava/lang/Object;)V
+       286: aload         7
+       288: aload         8
+       290: aload_3
+       291: invokevirtual #77                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$Custom.loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+       294: invokestatic  #28                 // Method assertSame:(Ljava/lang/Object;Ljava/lang/Object;)V
+       297: aload_0
+       298: invokevirtual #44                 // Method movePkgBack:()V
+       301: return
+      LineNumberTable:
+        line 370: 0
+        line 371: 4
+        line 373: 15
+        line 374: 34
+        line 375: 44
+        line 377: 47
+        line 378: 61
+        line 379: 74
+        line 381: 87
+        line 382: 95
+        line 384: 105
+        line 385: 113
+        line 387: 124
+        line 388: 136
+        line 390: 149
+        line 391: 157
+        line 393: 167
+        line 394: 175
+        line 396: 182
+        line 397: 190
+        line 398: 201
+        line 400: 212
+        line 401: 225
+        line 403: 238
+        line 404: 246
+        line 405: 256
+        line 407: 267
+        line 408: 275
+        line 409: 286
+        line 411: 297
+        line 412: 301
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           34     263     1  urls   [Ljava/net/URL;
+           44     253     2 cname   Ljava/lang/String;
+           47     250     3 objClass   Ljava/lang/String;
+           61     236     4   cl1   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest$Standard;
+           74     223     5   cl2   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest$Standard;
+           87     210     6   cl3   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest$Standard;
+           95     202     7     c   Ljava/lang/Class;
+          136     161     8   cl4   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest$Custom;
+          149     148     9   cl5   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest$Standard;
+          175     122    10    c4   Ljava/lang/Class;
+            0     302     0  this   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;
+      LocalVariableTypeTable:
+        Start  Length  Slot  Name   Signature
+           95     202     7     c   Ljava/lang/Class<*>;
+          175     122    10    c4   Ljava/lang/Class<*>;
+      StackMapTable: number_of_entries = 1
+        frame_type = 251 /* same_frame_extended */
+          offset_delta = 297
+    Exceptions:
+      throws java.net.MalformedURLException, java.lang.ClassNotFoundException
+    RuntimeVisibleAnnotations:
+      0: #119()
+        org.junit.Test
+
+  public void testFindSystemClass() throws java.net.MalformedURLException, java.lang.ClassNotFoundException;
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=6, locals=5, args_size=1
+         0: aload_0
+         1: invokevirtual #35                 // Method movePkgOut:()V
+         4: aload_0
+         5: iconst_0
+         6: anewarray     #6                  // class java/lang/String
+         9: invokevirtual #10                 // Method verifyNoPropertyViolation:([Ljava/lang/String;)Z
+        12: ifeq          82
+        15: iconst_1
+        16: anewarray     #11                 // class java/net/URL
+        19: dup
+        20: iconst_0
+        21: new           #11                 // class java/net/URL
+        24: dup
+        25: aload_0
+        26: getfield      #36                 // Field dirUrl:Ljava/lang/String;
+        29: invokespecial #37                 // Method java/net/URL."<init>":(Ljava/lang/String;)V
+        32: aastore
+        33: astore_1
+        34: new           #16                 // class gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader
+        37: dup
+        38: aload_0
+        39: aload_1
+        40: invokespecial #17                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader."<init>":(Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;[Ljava/net/URL;)V
+        43: astore_2
+        44: aload_2
+        45: ldc           #26                 // String java.lang.Class
+        47: invokevirtual #78                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader.delegateTofindSystemClass:(Ljava/lang/String;)Ljava/lang/Class;
+        50: invokestatic  #13                 // Method assertNotNull:(Ljava/lang/Object;)V
+        53: aload_0
+        54: getfield      #38                 // Field pkg:Ljava/lang/String;
+        57: invokedynamic #39,  0             // InvokeDynamic #0:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+        62: astore_3
+        63: aload_2
+        64: aload_3
+        65: invokevirtual #31                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader.loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+        68: invokestatic  #13                 // Method assertNotNull:(Ljava/lang/Object;)V
+        71: aload_2
+        72: aload_3
+        73: invokevirtual #78                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader.delegateTofindSystemClass:(Ljava/lang/String;)Ljava/lang/Class;
+        76: pop
+        77: goto          82
+        80: astore        4
+        82: aload_0
+        83: invokevirtual #44                 // Method movePkgBack:()V
+        86: return
+      Exception table:
+         from    to  target type
+            71    77    80   Class java/lang/ClassNotFoundException
+      LineNumberTable:
+        line 416: 0
+        line 417: 4
+        line 418: 15
+        line 419: 34
+        line 420: 44
+        line 422: 53
+        line 423: 63
+        line 426: 71
+        line 429: 77
+        line 427: 80
+        line 431: 82
+        line 432: 86
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           34      48     1  urls   [Ljava/net/URL;
+           44      38     2 loader   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader;
+           63      19     3 cname   Ljava/lang/String;
+            0      87     0  this   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;
+      StackMapTable: number_of_entries = 2
+        frame_type = 255 /* full_frame */
+          offset_delta = 80
+          locals = [ class gov/nasa/jpf/test/java/net/URLClassLoaderTest, class "[Ljava/net/URL;", class gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader, class java/lang/String ]
+          stack = [ class java/lang/ClassNotFoundException ]
+        frame_type = 248 /* chop */
+          offset_delta = 1
+    Exceptions:
+      throws java.net.MalformedURLException, java.lang.ClassNotFoundException
+    RuntimeVisibleAnnotations:
+      0: #119()
+        org.junit.Test
+
+  public void testFindSystemClass_ClassNotFoundException() throws java.net.MalformedURLException, java.lang.ClassNotFoundException;
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=6, locals=4, args_size=1
+         0: aload_0
+         1: invokevirtual #35                 // Method movePkgOut:()V
+         4: aload_0
+         5: ldc           #23                 // String java.lang.ClassNotFoundException
+         7: iconst_0
+         8: anewarray     #6                  // class java/lang/String
+        11: invokevirtual #7                  // Method verifyUnhandledException:(Ljava/lang/String;[Ljava/lang/String;)Z
+        14: ifeq          62
+        17: iconst_1
+        18: anewarray     #11                 // class java/net/URL
+        21: dup
+        22: iconst_0
+        23: new           #11                 // class java/net/URL
+        26: dup
+        27: aload_0
+        28: getfield      #36                 // Field dirUrl:Ljava/lang/String;
+        31: invokespecial #37                 // Method java/net/URL."<init>":(Ljava/lang/String;)V
+        34: aastore
+        35: astore_1
+        36: new           #16                 // class gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader
+        39: dup
+        40: aload_0
+        41: aload_1
+        42: invokespecial #17                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader."<init>":(Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;[Ljava/net/URL;)V
+        45: astore_2
+        46: aload_0
+        47: getfield      #38                 // Field pkg:Ljava/lang/String;
+        50: invokedynamic #39,  0             // InvokeDynamic #0:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+        55: astore_3
+        56: aload_2
+        57: aload_3
+        58: invokevirtual #78                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader.delegateTofindSystemClass:(Ljava/lang/String;)Ljava/lang/Class;
+        61: pop
+        62: aload_0
+        63: invokevirtual #44                 // Method movePkgBack:()V
+        66: return
+      LineNumberTable:
+        line 436: 0
+        line 437: 4
+        line 438: 17
+        line 439: 36
+        line 440: 46
+        line 444: 56
+        line 446: 62
+        line 447: 66
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           36      26     1  urls   [Ljava/net/URL;
+           46      16     2    cl   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader;
+           56       6     3 cname   Ljava/lang/String;
+            0      67     0  this   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;
+      StackMapTable: number_of_entries = 1
+        frame_type = 62 /* same */
+    Exceptions:
+      throws java.net.MalformedURLException, java.lang.ClassNotFoundException
+    RuntimeVisibleAnnotations:
+      0: #119()
+        org.junit.Test
+
+  public void testGetPackages() throws java.lang.ClassNotFoundException, java.net.MalformedURLException;
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=6, locals=8, args_size=1
+         0: aload_0
+         1: invokevirtual #35                 // Method movePkgOut:()V
+         4: aload_0
+         5: iconst_0
+         6: anewarray     #6                  // class java/lang/String
+         9: invokevirtual #10                 // Method verifyNoPropertyViolation:([Ljava/lang/String;)Z
+        12: ifeq          224
+        15: iconst_1
+        16: anewarray     #11                 // class java/net/URL
+        19: dup
+        20: iconst_0
+        21: new           #11                 // class java/net/URL
+        24: dup
+        25: aload_0
+        26: getfield      #36                 // Field dirUrl:Ljava/lang/String;
+        29: invokespecial #37                 // Method java/net/URL."<init>":(Ljava/lang/String;)V
+        32: aastore
+        33: astore_1
+        34: new           #16                 // class gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader
+        37: dup
+        38: aload_0
+        39: aload_1
+        40: invokespecial #17                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader."<init>":(Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;[Ljava/net/URL;)V
+        43: astore_2
+        44: aload_2
+        45: invokevirtual #80                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader.getPackages:()[Ljava/lang/Package;
+        48: astore_3
+        49: iconst_0
+        50: istore        4
+        52: iconst_0
+        53: istore        5
+        55: iconst_0
+        56: istore        6
+        58: iload         6
+        60: aload_3
+        61: arraylength
+        62: if_icmpge     110
+        65: aload_3
+        66: iload         6
+        68: aaload
+        69: invokevirtual #81                 // Method java/lang/Package.getName:()Ljava/lang/String;
+        72: ldc           #82                 // String java.lang
+        74: invokevirtual #83                 // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+        77: ifeq          86
+        80: iconst_1
+        81: istore        4
+        83: goto          104
+        86: aload_3
+        87: iload         6
+        89: aaload
+        90: invokevirtual #81                 // Method java/lang/Package.getName:()Ljava/lang/String;
+        93: ldc           #84                 // String classloader_specific_tests
+        95: invokevirtual #83                 // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+        98: ifeq          104
+       101: iconst_1
+       102: istore        5
+       104: iinc          6, 1
+       107: goto          58
+       110: iload         4
+       112: ifeq          124
+       115: iload         5
+       117: ifne          124
+       120: iconst_1
+       121: goto          125
+       124: iconst_0
+       125: invokestatic  #61                 // Method assertTrue:(Z)V
+       128: aload_0
+       129: getfield      #38                 // Field pkg:Ljava/lang/String;
+       132: invokedynamic #39,  0             // InvokeDynamic #0:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+       137: astore        6
+       139: aload_2
+       140: aload         6
+       142: invokevirtual #31                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader.loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+       145: pop
+       146: aload_2
+       147: invokevirtual #80                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader.getPackages:()[Ljava/lang/Package;
+       150: astore_3
+       151: iconst_0
+       152: istore        7
+       154: iload         7
+       156: aload_3
+       157: arraylength
+       158: if_icmpge     206
+       161: aload_3
+       162: iload         7
+       164: aaload
+       165: invokevirtual #81                 // Method java/lang/Package.getName:()Ljava/lang/String;
+       168: ldc           #82                 // String java.lang
+       170: invokevirtual #83                 // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+       173: ifeq          182
+       176: iconst_1
+       177: istore        4
+       179: goto          200
+       182: aload_3
+       183: iload         7
+       185: aaload
+       186: invokevirtual #81                 // Method java/lang/Package.getName:()Ljava/lang/String;
+       189: ldc           #84                 // String classloader_specific_tests
+       191: invokevirtual #83                 // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+       194: ifeq          200
+       197: iconst_1
+       198: istore        5
+       200: iinc          7, 1
+       203: goto          154
+       206: iload         4
+       208: ifeq          220
+       211: iload         5
+       213: ifeq          220
+       216: iconst_1
+       217: goto          221
+       220: iconst_0
+       221: invokestatic  #61                 // Method assertTrue:(Z)V
+       224: aload_0
+       225: invokevirtual #44                 // Method movePkgBack:()V
+       228: return
+      LineNumberTable:
+        line 451: 0
+        line 452: 4
+        line 453: 15
+        line 454: 34
+        line 455: 44
+        line 457: 49
+        line 458: 52
+        line 459: 55
+        line 460: 65
+        line 461: 80
+        line 462: 86
+        line 463: 101
+        line 459: 104
+        line 466: 110
+        line 468: 128
+        line 469: 139
+        line 470: 146
+        line 471: 151
+        line 472: 161
+        line 473: 176
+        line 474: 182
+        line 475: 197
+        line 471: 200
+        line 478: 206
+        line 480: 224
+        line 481: 228
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           58      52     6     i   I
+          154      52     7     i   I
+           34     190     1  urls   [Ljava/net/URL;
+           44     180     2    cl   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader;
+           49     175     3  pkgs   [Ljava/lang/Package;
+           52     172     4 java_lang   Z
+           55     169     5 classloader_specific_tests   Z
+          139      85     6 cname   Ljava/lang/String;
+            0     229     0  this   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;
+      StackMapTable: number_of_entries = 13
+        frame_type = 255 /* full_frame */
+          offset_delta = 58
+          locals = [ class gov/nasa/jpf/test/java/net/URLClassLoaderTest, class "[Ljava/net/URL;", class gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader, class "[Ljava/lang/Package;", int, int, int ]
+          stack = []
+        frame_type = 27 /* same */
+        frame_type = 17 /* same */
+        frame_type = 250 /* chop */
+          offset_delta = 5
+        frame_type = 13 /* same */
+        frame_type = 64 /* same_locals_1_stack_item */
+          stack = [ int ]
+        frame_type = 253 /* append */
+          offset_delta = 28
+          locals = [ class java/lang/String, int ]
+        frame_type = 27 /* same */
+        frame_type = 17 /* same */
+        frame_type = 250 /* chop */
+          offset_delta = 5
+        frame_type = 13 /* same */
+        frame_type = 64 /* same_locals_1_stack_item */
+          stack = [ int ]
+        frame_type = 255 /* full_frame */
+          offset_delta = 2
+          locals = [ class gov/nasa/jpf/test/java/net/URLClassLoaderTest ]
+          stack = []
+    Exceptions:
+      throws java.lang.ClassNotFoundException, java.net.MalformedURLException
+    RuntimeVisibleAnnotations:
+      0: #119()
+        org.junit.Test
+
+  public void testGetDefinedPackage() throws java.lang.ClassNotFoundException, java.net.MalformedURLException;
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=6, locals=4, args_size=1
+         0: aload_0
+         1: invokevirtual #35                 // Method movePkgOut:()V
+         4: aload_0
+         5: iconst_0
+         6: anewarray     #6                  // class java/lang/String
+         9: invokevirtual #10                 // Method verifyNoPropertyViolation:([Ljava/lang/String;)Z
+        12: ifeq          96
+        15: iconst_1
+        16: anewarray     #11                 // class java/net/URL
+        19: dup
+        20: iconst_0
+        21: new           #11                 // class java/net/URL
+        24: dup
+        25: aload_0
+        26: getfield      #36                 // Field dirUrl:Ljava/lang/String;
+        29: invokespecial #37                 // Method java/net/URL."<init>":(Ljava/lang/String;)V
+        32: aastore
+        33: astore_1
+        34: new           #16                 // class gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader
+        37: dup
+        38: aload_0
+        39: aload_1
+        40: invokespecial #17                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader."<init>":(Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;[Ljava/net/URL;)V
+        43: astore_2
+        44: aload_2
+        45: ldc           #82                 // String java.lang
+        47: invokevirtual #85                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader.getDefinedPackage:(Ljava/lang/String;)Ljava/lang/Package;
+        50: invokestatic  #13                 // Method assertNotNull:(Ljava/lang/Object;)V
+        53: aload_2
+        54: ldc           #86                 // String non_existing_package
+        56: invokevirtual #85                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader.getDefinedPackage:(Ljava/lang/String;)Ljava/lang/Package;
+        59: invokestatic  #34                 // Method assertNull:(Ljava/lang/Object;)V
+        62: aload_2
+        63: ldc           #84                 // String classloader_specific_tests
+        65: invokevirtual #85                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader.getDefinedPackage:(Ljava/lang/String;)Ljava/lang/Package;
+        68: invokestatic  #34                 // Method assertNull:(Ljava/lang/Object;)V
+        71: aload_0
+        72: getfield      #38                 // Field pkg:Ljava/lang/String;
+        75: invokedynamic #39,  0             // InvokeDynamic #0:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+        80: astore_3
+        81: aload_2
+        82: aload_3
+        83: invokevirtual #31                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader.loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+        86: pop
+        87: aload_2
+        88: ldc           #84                 // String classloader_specific_tests
+        90: invokevirtual #85                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader.getDefinedPackage:(Ljava/lang/String;)Ljava/lang/Package;
+        93: invokestatic  #13                 // Method assertNotNull:(Ljava/lang/Object;)V
+        96: aload_0
+        97: invokevirtual #44                 // Method movePkgBack:()V
+       100: return
+      LineNumberTable:
+        line 485: 0
+        line 486: 4
+        line 487: 15
+        line 488: 34
+        line 489: 44
+        line 490: 53
+        line 491: 62
+        line 493: 71
+        line 494: 81
+        line 495: 87
+        line 497: 96
+        line 498: 100
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           34      62     1  urls   [Ljava/net/URL;
+           44      52     2    cl   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader;
+           81      15     3 cname   Ljava/lang/String;
+            0     101     0  this   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;
+      StackMapTable: number_of_entries = 1
+        frame_type = 251 /* same_frame_extended */
+          offset_delta = 96
+    Exceptions:
+      throws java.lang.ClassNotFoundException, java.net.MalformedURLException
+    RuntimeVisibleAnnotations:
+      0: #119()
+        org.junit.Test
+
+  public void testThrownException() throws java.lang.ClassNotFoundException, java.net.MalformedURLException, java.lang.SecurityException, java.lang.NoSuchMethodException, java.lang.IllegalAccessException, java.lang.reflect.InvocationTargetException;
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=6, locals=8, args_size=1
+         0: aload_0
+         1: invokevirtual #35                 // Method movePkgOut:()V
+         4: aload_0
+         5: iconst_0
+         6: anewarray     #6                  // class java/lang/String
+         9: invokevirtual #10                 // Method verifyNoPropertyViolation:([Ljava/lang/String;)Z
+        12: ifeq          131
+        15: iconst_1
+        16: anewarray     #11                 // class java/net/URL
+        19: dup
+        20: iconst_0
+        21: new           #11                 // class java/net/URL
+        24: dup
+        25: aload_0
+        26: getfield      #36                 // Field dirUrl:Ljava/lang/String;
+        29: invokespecial #37                 // Method java/net/URL."<init>":(Ljava/lang/String;)V
+        32: aastore
+        33: astore_1
+        34: new           #16                 // class gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader
+        37: dup
+        38: aload_0
+        39: aload_1
+        40: invokespecial #17                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader."<init>":(Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;[Ljava/net/URL;)V
+        43: astore_2
+        44: aload_0
+        45: getfield      #38                 // Field pkg:Ljava/lang/String;
+        48: invokedynamic #39,  0             // InvokeDynamic #0:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+        53: astore_3
+        54: aload_2
+        55: aload_3
+        56: invokevirtual #31                 // Method gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader.loadClass:(Ljava/lang/String;)Ljava/lang/Class;
+        59: astore        4
+        61: aload         4
+        63: ldc           #87                 // String causeArithmeticException
+        65: iconst_0
+        66: anewarray     #88                 // class java/lang/Class
+        69: invokevirtual #89                 // Method java/lang/Class.getMethod:(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+        72: astore        5
+        74: aload         5
+        76: aconst_null
+        77: iconst_0
+        78: anewarray     #90                 // class java/lang/Object
+        81: invokevirtual #91                 // Method java/lang/reflect/Method.invoke:(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+        84: pop
+        85: ldc           #92                 // String Should have thrown java.lang.ArithmeticException: division by zero
+        87: invokestatic  #93                 // Method fail:(Ljava/lang/String;)V
+        90: goto          131
+        93: astore        6
+        95: aload         6
+        97: invokevirtual #95                 // Method java/lang/reflect/InvocationTargetException.getCause:()Ljava/lang/Throwable;
+       100: astore        7
+       102: aload         7
+       104: instanceof    #96                 // class java/lang/ArithmeticException
+       107: ifeq          127
+       110: aload         7
+       112: invokevirtual #97                 // Method java/lang/Throwable.getMessage:()Ljava/lang/String;
+       115: ldc           #98                 // String division by zero
+       117: invokevirtual #83                 // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+       120: ifeq          127
+       123: iconst_1
+       124: goto          128
+       127: iconst_0
+       128: invokestatic  #61                 // Method assertTrue:(Z)V
+       131: aload_0
+       132: invokevirtual #44                 // Method movePkgBack:()V
+       135: return
+      Exception table:
+         from    to  target type
+            74    90    93   Class java/lang/reflect/InvocationTargetException
+      LineNumberTable:
+        line 502: 0
+        line 503: 4
+        line 504: 15
+        line 505: 34
+        line 506: 44
+        line 508: 54
+        line 509: 61
+        line 512: 74
+        line 513: 85
+        line 518: 90
+        line 515: 93
+        line 516: 95
+        line 517: 102
+        line 520: 131
+        line 521: 135
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+          102      29     7 cause   Ljava/lang/Throwable;
+           95      36     6   ite   Ljava/lang/reflect/InvocationTargetException;
+           34      97     1  urls   [Ljava/net/URL;
+           44      87     2 loader   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader;
+           54      77     3 cname   Ljava/lang/String;
+           61      70     4     c   Ljava/lang/Class;
+           74      57     5     m   Ljava/lang/reflect/Method;
+            0     136     0  this   Lgov/nasa/jpf/test/java/net/URLClassLoaderTest;
+      LocalVariableTypeTable:
+        Start  Length  Slot  Name   Signature
+           61      70     4     c   Ljava/lang/Class<*>;
+      StackMapTable: number_of_entries = 4
+        frame_type = 255 /* full_frame */
+          offset_delta = 93
+          locals = [ class gov/nasa/jpf/test/java/net/URLClassLoaderTest, class "[Ljava/net/URL;", class gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader, class java/lang/String, class java/lang/Class, class java/lang/reflect/Method ]
+          stack = [ class java/lang/reflect/InvocationTargetException ]
+        frame_type = 253 /* append */
+          offset_delta = 33
+          locals = [ class java/lang/reflect/InvocationTargetException, class java/lang/Throwable ]
+        frame_type = 64 /* same_locals_1_stack_item */
+          stack = [ int ]
+        frame_type = 255 /* full_frame */
+          offset_delta = 2
+          locals = [ class gov/nasa/jpf/test/java/net/URLClassLoaderTest ]
+          stack = []
+    Exceptions:
+      throws java.lang.ClassNotFoundException, java.net.MalformedURLException, java.lang.SecurityException, java.lang.NoSuchMethodException, java.lang.IllegalAccessException, java.lang.reflect.InvocationTargetException
+    RuntimeVisibleAnnotations:
+      0: #119()
+        org.junit.Test
+}
+SourceFile: "URLClassLoaderTest.java"
+NestMembers:
+  gov/nasa/jpf/test/java/net/URLClassLoaderTest$Custom
+  gov/nasa/jpf/test/java/net/URLClassLoaderTest$Standard
+  gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader
+InnerClasses:
+  public #101= #75 of #99;                // Custom=class gov/nasa/jpf/test/java/net/URLClassLoaderTest$Custom of class gov/nasa/jpf/test/java/net/URLClassLoaderTest
+  public #103= #71 of #99;                // Standard=class gov/nasa/jpf/test/java/net/URLClassLoaderTest$Standard of class gov/nasa/jpf/test/java/net/URLClassLoaderTest
+  public #104= #16 of #99;                // TestClassLoader=class gov/nasa/jpf/test/java/net/URLClassLoaderTest$TestClassLoader of class gov/nasa/jpf/test/java/net/URLClassLoaderTest
+  public static final #399= #398 of #401; // Lookup=class java/lang/invoke/MethodHandles$Lookup of class java/lang/invoke/MethodHandles
+BootstrapMethods:
+  0: #248 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #249 \u0001.Class1
+  1: #248 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #256 \u0001/Class1.class
+  2: #248 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #258 \u0001/\u0001
+  3: #248 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #262 \u0001/Interface1.class
+  4: #248 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #265 \u0001\u0001
