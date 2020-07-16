@@ -1516,6 +1516,8 @@ public class ClassFile extends BinaryClassSource {
       setBootstrapMethod(reader, tag, i, refKind, clsName, mthName, parameters, descriptor, bmArgs);
     }
     
+    ResolvedClasses.resolvedClasses.clear();
+
     setBootstrapMethodsDone( reader, tag);
   }
   

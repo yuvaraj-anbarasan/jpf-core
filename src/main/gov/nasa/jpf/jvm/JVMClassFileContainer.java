@@ -58,14 +58,6 @@ public abstract class JVMClassFileContainer extends ClassFileContainer {
       JVMCodeBuilder cb = sysCli.getCodeBuilder(typeName);
       ClassFile cf = new ClassFile(data);
       
-      // System.err.println(">>>>>>>>>>>>>>>>>>>  JVMClassFileContainer createClassInfo  <<<<<<<<<<<<<<<<<<<<<<<<<");
-      // System.err.println("loader: "+loader);
-      // System.err.println("typeName: "+typeName);
-      // System.err.println("cf: "+cf);
-      // System.err.println("url: "+url);
-      // System.err.println("cb: "+cb);
-      // System.err.println();
-      
       return new JVMClassInfo( typeName, loader, cf, url, cb);
     }
     
