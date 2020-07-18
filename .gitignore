@@ -75,3 +75,7 @@ out/
 # JIRA plugin
 atlassian-ide-plugin.xml
 /.idea/
+
+#local files
+local
+temp.ser
