@@ -115,7 +115,7 @@ public class System {
 
       @Override
       public ConcurrentHashMap<?, ?> createOrGetClassLoaderValueMap(ClassLoader cl) {
-        return null;
+        return cl.createOrGetClassLoaderValueMap();
       }
     };
   }

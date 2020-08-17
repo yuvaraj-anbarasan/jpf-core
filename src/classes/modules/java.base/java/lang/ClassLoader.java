@@ -28,6 +28,9 @@ import java.util.Collection;
 import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.Vector;
+import java.util.concurrent.ConcurrentHashMap;
+
+import jdk.internal.misc.Unsafe;
 
 /**
  * @author Nastaran Shafiei <nastaran.shafiei@gmail.com>
@@ -292,4 +295,17 @@ public abstract class ClassLoader {
   public native final Package getDefinedPackage(final String name);
 
   public native final Package[] getDefinedPackages();
+
+  // Stores ClassLoaderValue(s) associated with this ClassLoader
+  private volatile ConcurrentHashMap<?, ?> classLoaderValueMap;
+
+  /**
+   * Returns the classLoaderValueMap or creats it if it doesn't already exist.
+   */
+  public ConcurrentHashMap<?, ?> createOrGetClassLoaderValueMap() {
+    if (classLoaderValueMap == null) { 
+      return new ConcurrentHashMap<>();
+    }
+    return classLoaderValueMap;
+  }
 }
