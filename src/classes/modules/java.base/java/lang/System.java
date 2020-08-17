@@ -22,6 +22,7 @@ import java.io.PrintStream;
 import java.nio.channels.Channel;
 import java.util.Map;
 import java.util.Properties;
+import java.util.concurrent.ConcurrentHashMap;
 
 import jdk.internal.misc.JavaLangAccess;
 import jdk.internal.misc.SharedSecrets;
@@ -110,6 +111,11 @@ public class System {
 	    public StackTraceElement getStackTraceElement(Throwable t, int i) {
         StackTraceElement[] st = t.getStackTrace();
         return st[i];
+      }
+
+      @Override
+      public ConcurrentHashMap<?, ?> createOrGetClassLoaderValueMap(ClassLoader cl) {
+        return null;
       }
     };
   }

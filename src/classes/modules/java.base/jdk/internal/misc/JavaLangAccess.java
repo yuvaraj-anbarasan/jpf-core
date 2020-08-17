@@ -19,6 +19,9 @@
 package jdk.internal.misc;
 
 import sun.nio.ch.Interruptible;
+
+import java.util.concurrent.ConcurrentHashMap;
+
 import jdk.internal.reflect.ConstantPool;
 import sun.reflect.annotation.AnnotationType;
 
@@ -48,4 +51,10 @@ public interface JavaLangAccess {
     int getStackTraceDepth(Throwable t);
     
     StackTraceElement getStackTraceElement(Throwable t, int i);
+
+    /**
+     * Returns the ConcurrentHashMap that stores ClassLoaderValue(s)
+     * associated with the given class loader or creats it if it doesn't already exist.
+     */
+    ConcurrentHashMap<?, ?> createOrGetClassLoaderValueMap(ClassLoader cl);
 }
