@@ -68,39 +68,46 @@ public class System {
   static JavaLangAccess createJavaLangAccess () {
     return new JavaLangAccess(){
       @Override
-	public ConstantPool getConstantPool(Class<?> cls) {
+	    public ConstantPool getConstantPool(Class<?> cls) {
         throw new UnsupportedOperationException("JavaLangAccess.getConstantPool() not supported yet");
         //return cls.getConstantPool();
       }
+
       @Override
-	public void setAnnotationType(Class<?> cls, AnnotationType type) {
+	    public void setAnnotationType(Class<?> cls, AnnotationType type) {
         throw new UnsupportedOperationException("JavaLangAccess.setAnnotationType() not supported yet");
         //cls.setAnnotationType(type);
       }
+
       @Override
-	public AnnotationType getAnnotationType(Class<?> cls) {
+	    public AnnotationType getAnnotationType(Class<?> cls) {
         throw new UnsupportedOperationException("JavaLangAccess.getAnnotationType() not supported yet");
         //return cls.getAnnotationType();
       }
+
       @Override
-	public <E extends Enum<E>> E[] getEnumConstantsShared(Class<E> cls) {
+	    public <E extends Enum<E>> E[] getEnumConstantsShared(Class<E> cls) {
         return cls.getEnumConstantsShared();
       }
+
       @Override
-	public void blockedOn(Thread t, Interruptible b) {
+	    public void blockedOn(Thread t, Interruptible b) {
         throw new UnsupportedOperationException("JavaLangAccess.blockedOn() not supported yet");
         //t.blockedOn(b);
       }
+
       @Override
-	public void registerShutdownHook(int slot, Runnable r) {
+	    public void registerShutdownHook(int slot, Runnable r) {
         throw new UnsupportedOperationException("JavaLangAccess.registerShutdownHook() not supported yet");
       }
+
       @Override
-	public int getStackTraceDepth(Throwable t) {
+	    public int getStackTraceDepth(Throwable t) {
         return t.getStackTraceDepth();
       }
+
       @Override
-	public StackTraceElement getStackTraceElement(Throwable t, int i) {
+	    public StackTraceElement getStackTraceElement(Throwable t, int i) {
         StackTraceElement[] st = t.getStackTrace();
         return st[i];
       }
