@@ -303,9 +303,27 @@ public abstract class ClassLoader {
    * Returns the classLoaderValueMap or creats it if it doesn't already exist.
    */
   public ConcurrentHashMap<?, ?> createOrGetClassLoaderValueMap() {
-    if (classLoaderValueMap == null) { 
-      return new ConcurrentHashMap<>();
+    ConcurrentHashMap<?, ?> map = classLoaderValueMap;
+    if (map == null) {
+        map = new ConcurrentHashMap<>();
+        boolean set = trySetObjectField("classLoaderValueMap", map);
+        if (!set) {
+            // beaten by someone else
+            map = classLoaderValueMap;
+        }
     }
-    return classLoaderValueMap;
+    return map;
+  }
+
+  /**
+    * Attempts to atomically set a volatile field in this object. Returns
+    * true if field is already set by another thread.
+    */
+  private boolean trySetObjectField(String name, Object obj) {
+    Unsafe unsafe = Unsafe.getUnsafe();
+    Class<?> k = ClassLoader.class;
+    long offset;
+    offset = unsafe.objectFieldOffset(k, name);
+    return unsafe.compareAndSetObject(this, offset, null, obj);
   }
 }
